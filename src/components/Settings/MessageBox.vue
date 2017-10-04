@@ -1,5 +1,5 @@
 <template>
-   <v-expansion-panel>
+   <!-- <v-expansion-panel>
       <v-expansion-panel-content>
          <div slot="header">Message Box</div>
          <v-card class="grey lighten-4 elevation-0">
@@ -64,7 +64,37 @@
              </v-card-actions>
          </v-card>
       </v-expansion-panel-content>
-   </v-expansion-panel>
+   </v-expansion-panel> -->
+<div>
+  <div class="list-group">
+    <a href="#" class="list-group-item">
+      <select v-model="selectedMessageBoxSettings">
+        <option v-for="(option, i) in messageBox.boxPosition" :key="i" v-bind:value="option.text">
+          {{ option.text }}
+        </option>
+      </select>
+    </a>
+  </div>
+  <div class="list-group">
+      <a href="#" class="list-group-item active">
+        <select v-model="selectedMessageBoxSettings">
+          <option v-for="(option, i) in messageBox.boxEffects" :key="i" v-bind:value="option.text">
+            {{ option.text }}
+          </option>
+        </select>
+      </a>
+  </div>
+  <div class="list-group">
+      <a href="#" class="list-group-item">
+        <select v-model="selectedMessageBoxSettings">
+          <option v-for="(option, i) in messageBox.boxTemplate" :key="i" v-bind:value="option.text">
+            {{ option.text }}
+          </option>
+        </select>
+      </a>
+  </div>
+</div>
+
 </template>
 
 <script>

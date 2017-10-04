@@ -1,5 +1,5 @@
 <template>
-  <v-expansion-panel>
+  <!-- <v-expansion-panel>
     <v-expansion-panel-content>
       <div slot="header">Layout Settings</div>
       <v-card>
@@ -17,7 +17,18 @@
         </v-card-actions>
       </v-card>
     </v-expansion-panel-content>
-  </v-expansion-panel>
+  </v-expansion-panel> -->
+
+
+  <div class="row">
+    <div class="list-group-item">
+      <label>Layout Name:</label>
+      <div class="input-group col-md-12">
+        <input type="text" class="form-control" placeholder="Layout Name">
+      </div>
+    </div>
+  </div>
+
 </template>
 
 <script>

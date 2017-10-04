@@ -1,5 +1,22 @@
 <template>
-  <v-container>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+          <div class="col-md-6" v-for="(widget, i) in widgets" :key="i">
+            <div class="panel status panel-info">
+                <div class="panel-heading text-center">
+                    <i v-bind:class="widget.icon"></i>
+                </div>
+                <div class="panel-body">
+                    <p class="panel-title text-center">{{ widget.title }}</p>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+  <!-- <v-container>
     <v-layout row wrap>
       <v-flex xs12>
         <v-text-field
@@ -12,15 +29,6 @@
     </v-layout>
     <v-layout row wrap class="mt-3">
      <v-flex>
-        <!-- <draggable v-model="widgets" :options="{group:'widgets'}" @start="drag=true" @end="drag=false">
-          <v-card class="mb-2 mr-2 text-xs-center list-group" v-for="(widget, i) in widgets" :key="i" v-sortable>
-            <v-icon class="mt-2 list-group-item" large>{{ widget.icon }}</v-icon>
-            <v-card-text>
-              <p>{{ widget.title }}</p>
-            </v-card-text>
-          </v-card>
-        </draggable> -->
-
         <draggable v-model="widgets">
           <transition-group>
            <v-card class="mb-2 mr-2 text-xs-center list-group" v-for="(widget, i) in widgets" :key="i">
@@ -33,24 +41,21 @@
         </draggable>
       </v-flex>
     </v-layout>
-  </v-container>
+  </v-container> -->
 </template>
 
 <script>
-import draggable from 'vuedraggable';
-
 export default {
   name: 'widgets',
   components: {
-    draggable,
   },
   data: () => ({
     widgets: [
-      { icon: 'format_list_bulleted', title: 'Fixture Menu' },
-      { icon: 'border_clear', title: 'Row' },
-      { icon: 'content_paste', title: 'Betslip' },
-      { icon: 'view_headline', title: 'Highlights' },
-      { icon: 'format_align_justify', title: 'Matches' },
+      { icon: 'glyphicon glyphicon-align-justify', title: 'Fixture Menu' },
+      { icon: 'glyphicon glyphicon-arrow-down', title: 'Row' },
+      { icon: 'glyphicon glyphicon-list-alt', title: 'Betslip' },
+      { icon: 'glyphicon glyphicon-menu-hamburger', title: 'Highlights' },
+      { icon: 'glyphicon glyphicon-tasks', title: 'Matches' },
     ],
     searchParams: '',
   }),
@@ -65,4 +70,3 @@ export default {
   },
 };
 </script>
-

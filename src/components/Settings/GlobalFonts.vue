@@ -1,5 +1,8 @@
 <template>
-   <v-expansion-panel>
+  <div>
+
+  </div>
+   <!-- <v-expansion-panel>
       <v-expansion-panel-content>
          <div slot="header">Global Fonts</div>
          <v-card>
@@ -220,7 +223,7 @@
             </v-card-actions>
          </v-card>
       </v-expansion-panel-content>
-   </v-expansion-panel>
+   </v-expansion-panel> -->
 </template>
 
 <script>
