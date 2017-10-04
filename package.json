@@ -7,7 +7,9 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "npm run dev",
+    "prebuild": "rimraf ./dist && mkdir dist",
     "build": "node build/build.js",
+    "postbuild": "rimraf dist/**/*.map",
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
