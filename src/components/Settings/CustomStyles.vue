@@ -1,19 +1,33 @@
 <template>
-  <v-expansion-panel>
-    <v-expansion-panel-content>
-      <div slot="header">Custom CSS</div>
-      <v-card>
-        <v-card-text class="grey lighten-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn flat class="blue--text">
-            <v-icon left>check_circle</v-icon>
-            Save
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-expansion-panel-content>
-  </v-expansion-panel>
+ <div class="panel panel-default">
+  <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+        </span>Custom CSS</a>
+      </h4>
+  </div>
+  <div id="collapseFour" class="panel-collapse collapse">
+      <!-- <div class="list-group">
+        <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading">List group item heading</h4>
+            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+        </a>
+      </div>
+      <div class="list-group">
+        <a href="#" class="list-group-item active">
+            <h4 class="list-group-item-heading">List group item heading</h4>
+            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+        </a>
+      </div>
+      <div class="list-group">
+        <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading">List group item heading</h4>
+            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+        </a>
+      </div> -->
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+  </div>
+</div>
 </template>
 
 <script>
