@@ -1,34 +1,26 @@
 <template>
-  <!-- <v-expansion-panel>
-    <v-expansion-panel-content>
-      <div slot="header">Layout Settings</div>
-      <v-card>
-        <v-card-text class="grey lighten-3">
-          <v-flex xs12>
-            <v-text-field label="Layout Name" v-model="layoutName"></v-text-field>
-          </v-flex>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn flat class="blue--text" @click="onSaveLayoutName">
-            <v-icon left>check_circle</v-icon>
-            Save
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-expansion-panel-content>
-  </v-expansion-panel> -->
-
-
-  <div class="row">
-    <div class="list-group-item">
-      <label>Layout Name:</label>
-      <div class="input-group col-md-12">
-        <input type="text" class="form-control" placeholder="Layout Name">
-      </div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseLayoutSettings">
+        </span>Layout Settings</a>
+    </h4>
+  </div>
+  <div id="collapseLayoutSettings" class="panel-collapse collapse in">
+    <div class="list-group">
+        <div class="list-group-item">
+            <div class="row">
+            <div class="list-group-item">
+              <label>Layout Name:</label>
+              <div class="input-group col-md-12">
+                <input type="text" class="form-control" placeholder="Layout Name">
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
-
+</div>
 </template>
 
 <script>
