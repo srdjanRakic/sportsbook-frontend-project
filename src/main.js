@@ -1,16 +1,16 @@
-import 'bootstrap/dist/css/bootstrap.css';
-import jQuery from 'jquery';
+import vSelect from 'vue-select';
 import Vue from 'vue';
 import App from './App';
+import AlertCmp from './components/Shared/Alert';
+import { store } from './store';
 
-
-global.jQuery = jQuery;
-require('bootstrap');
-
+Vue.component('v-select', vSelect);
+Vue.component('app-alert', AlertCmp);
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   render: h => h(App),
 });
