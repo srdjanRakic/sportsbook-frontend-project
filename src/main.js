@@ -4,6 +4,8 @@ import App from './App';
 import AlertCmp from './components/Shared/Alert';
 import { store } from './store';
 
+require('./assets/css/main.css');
+
 Vue.component('v-select', vSelect);
 Vue.component('app-alert', AlertCmp);
 Vue.config.productionTip = false;
