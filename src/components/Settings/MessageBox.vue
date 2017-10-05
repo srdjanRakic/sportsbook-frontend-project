@@ -1,100 +1,26 @@
 <template>
-   <!-- <v-expansion-panel>
-      <v-expansion-panel-content>
-         <div slot="header">Message Box</div>
-         <v-card class="grey lighten-4 elevation-0">
-            <v-card-text>
-               <v-container fluid>
-                  <v-layout row wrap>
-                     <v-flex xs12>
-                        Box position
-                     </v-flex>
-                     <v-flex xs12>
-                        <v-select
-                           v-bind:items="messageBox.boxPosition"
-                           label="Select"
-                           single-line
-                           bottom
-                           v-model="selectedMessageBoxSettings.boxPosition"
-                           item-value="text"
-                           item-text="text"
-                           ></v-select>
-                     </v-flex>
-                  </v-layout>
-                  <v-layout row wrap>
-                     <v-flex xs12>
-                        Box effects
-                     </v-flex>
-                     <v-flex xs12>
-                        <v-select
-                           v-bind:items="messageBox.boxEffects"
-                           label="Select"
-                           single-line
-                           bottom
-                           v-model="selectedMessageBoxSettings.boxEffects"
-                           item-value="text"
-                            item-text="text"
-                           ></v-select>
-                     </v-flex>
-                  </v-layout>
-                    <v-layout row wrap>
-                     <v-flex xs12>
-                        Box template
-                     </v-flex>
-                     <v-flex xs12>
-                        <v-select
-                           v-bind:items="messageBox.boxTemplate"
-                           label="Select"
-                           single-line
-                           bottom
-                           v-model="selectedMessageBoxSettings.boxTemplate"
-                           item-value="text"
-                           item-text="text"
-                           ></v-select>
-                     </v-flex>
-                  </v-layout>
-               </v-container>
-            </v-card-text>
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn flat class="blue--text" @click="onUpdateMessageBox">
-                <v-icon left>check_circle</v-icon>
-                Save
-              </v-btn>
-             </v-card-actions>
-         </v-card>
-      </v-expansion-panel-content>
-   </v-expansion-panel> -->
-<div>
-  <div class="list-group">
-    <a href="#" class="list-group-item">
-      <select v-model="selectedMessageBoxSettings">
-        <option v-for="(option, i) in messageBox.boxPosition" :key="i" v-bind:value="option.text">
-          {{ option.text }}
-        </option>
-      </select>
-    </a>
-  </div>
-  <div class="list-group">
-      <a href="#" class="list-group-item active">
-        <select v-model="selectedMessageBoxSettings">
-          <option v-for="(option, i) in messageBox.boxEffects" :key="i" v-bind:value="option.text">
-            {{ option.text }}
-          </option>
-        </select>
-      </a>
-  </div>
-  <div class="list-group">
-      <a href="#" class="list-group-item">
-        <select v-model="selectedMessageBoxSettings">
-          <option v-for="(option, i) in messageBox.boxTemplate" :key="i" v-bind:value="option.text">
-            {{ option.text }}
-          </option>
-        </select>
-      </a>
-  </div>
+<div class="panel panel-default">
+   <div class="panel-heading">
+      <h4 class="panel-title">
+         <a data-toggle="collapse" data-parent="#accordion" href="#collapseMessageBox">
+         </span>Message Box</a>
+      </h4>
+   </div>
+   <div id="collapseMessageBox" class="panel-collapse collapse">
+      <div class="list-group-item">
+         <label>Box Template</label>
+         <v-select :options="messageBox.boxPosition" label="text" v-model="selectedBoxPosition"></v-select>
+      </div>
+      <div class="list-group-item">
+         <label>Box Template</label>
+         <v-select :options="messageBox.boxEffects" label="text" v-model="selectedBoxEffects"></v-select>
+      </div>
+      <div class="list-group-item">
+         <label>Box Template</label>
+         <v-select :options="messageBox.boxTemplate" label="text" v-model="selectedBoxTemplate"></v-select>
+      </div>
+   </div>
 </div>
-
 </template>
 
 <script>
@@ -102,11 +28,9 @@ export default {
   name: 'message-box',
   data() {
     return {
-      selectedMessageBoxSettings: {
-        boxPosition: '',
-        boxEffects: '',
-        boxTemplate: '',
-      },
+      selectedBoxPosition: null,
+      selectedBoxEffects: null,
+      selectedBoxTemplate: null,
     };
   },
   computed: {

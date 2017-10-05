@@ -1,229 +1,100 @@
 <template>
-  <div>
-
-  </div>
-   <!-- <v-expansion-panel>
-      <v-expansion-panel-content>
-         <div slot="header">Global Fonts</div>
-         <v-card>
-            <v-card-text class="grey lighten-3">
-               <v-expansion-panel>
-                  <v-expansion-panel-content>
-                     <div slot="header">Primary Headline</div>
-                     <v-card>
-                        <v-card-text class="grey lighten-3">
-                           <v-layout row wrap>
-                              <v-flex xs12>
-                                 Font family
-                              </v-flex>
-                              <v-flex xs12>
-                                 <v-select
-                                    v-bind:items="globalFonts.primaryHeadline.fontFamily"
-                                    label="Select"
-                                    single-line
-                                    bottom
-                                    item-value="text"
-                                    item-text="text"
-                                    v-model="selectedGlobalFonts.primaryHeadline.fontFamily"
-                                    ></v-select>
-                              </v-flex>
-                              <v-flex xs12>
-                                 Font-weight
-                              </v-flex>
-                              <v-flex xs12>
-                                 <v-select
-                                    v-bind:items="globalFonts.primaryHeadline.fontWeight"
-                                    label="Select"
-                                    single-line
-                                    bottom
-                                    item-value="text"
-                                    item-text="text"
-                                    v-model="selectedGlobalFonts.primaryHeadline.fontWeight"
-                                    ></v-select>
-                              </v-flex>
-                              <v-flex xs12>
-                                 Font-size
-                              </v-flex>
-                              <v-flex xs12>
-                                 <v-select
-                                    v-bind:items="globalFonts.primaryHeadline.fontSize"
-                                    label="Select"
-                                    single-line
-                                    bottom
-                                    item-value="text"
-                                    item-text="text"
-                                    v-model="selectedGlobalFonts.primaryHeadline.fontSize"
-                                    ></v-select>
-                              </v-flex>
-                           </v-layout>
-                        </v-card-text>
-                     </v-card>
-                  </v-expansion-panel-content>
-                  <v-expansion-panel-content>
-                     <div slot="header">Secondary Headline</div>
-                     <v-card>
-                        <v-card-text class="grey lighten-3">
-                           <v-layout row wrap>
-                              <v-flex xs12>
-                                 Font family
-                              </v-flex>
-                              <v-flex xs12>
-                                 <v-select
-                                    v-bind:items="globalFonts.secondaryHeadline.fontFamily"
-                                    label="Select"
-                                    single-line
-                                    bottom
-                                    item-value="text"
-                                    item-text="text"
-                                    v-model="selectedGlobalFonts.secondaryHeadline.fontFamily"
-                                    ></v-select>
-                              </v-flex>
-                              <v-flex xs12>
-                                 Font-weight
-                              </v-flex>
-                              <v-flex xs12>
-                                 <v-select
-                                    v-bind:items="globalFonts.secondaryHeadline.fontWeight"
-                                    label="Select"
-                                    single-line
-                                    bottom
-                                    item-value="text"
-                                    item-text="text"
-                                    v-model="selectedGlobalFonts.secondaryHeadline.fontWeight"
-                                    ></v-select>
-                              </v-flex>
-                              <v-flex xs12>
-                                 Font-size
-                              </v-flex>
-                              <v-flex xs12>
-                                 <v-select
-                                    v-bind:items="globalFonts.secondaryHeadline.fontSize"
-                                    label="Select"
-                                    single-line
-                                    bottom
-                                    item-value="text"
-                                    item-text="text"
-                                    v-model="selectedGlobalFonts.secondaryHeadline.fontSize"
-                                    ></v-select>
-                              </v-flex>
-                           </v-layout>
-                        </v-card-text>
-                     </v-card>
-                  </v-expansion-panel-content>
-                  <v-expansion-panel-content>
-                     <div slot="header">Body Text</div>
-                     <v-card>
-                        <v-card-text class="grey lighten-3">
-                           <v-layout row wrap>
-                              <v-flex xs12>
-                                 Font family
-                              </v-flex>
-                              <v-flex xs12>
-                                 <v-select
-                                    v-bind:items="globalFonts.bodyText.fontFamily"
-                                    label="Select"
-                                    single-line
-                                    bottom
-                                    item-value="text"
-                                    item-text="text"
-                                    v-model="selectedGlobalFonts.bodyText.fontFamily"
-                                    ></v-select>
-                              </v-flex>
-                              <v-flex xs12>
-                                 Font-weight
-                              </v-flex>
-                              <v-flex xs12>
-                                 <v-select
-                                    v-bind:items="globalFonts.bodyText.fontWeight"
-                                    label="Select"
-                                    single-line
-                                    bottom
-                                    item-value="text"
-                                    item-text="text"
-                                    v-model="selectedGlobalFonts.bodyText.fontWeight"
-                                    ></v-select>
-                              </v-flex>
-                              <v-flex xs12>
-                                 Font-size
-                              </v-flex>
-                              <v-flex xs12>
-                                 <v-select
-                                    v-bind:items="globalFonts.bodyText.fontSize"
-                                    label="Select"
-                                    single-line
-                                    bottom
-                                    item-value="text"
-                                    item-text="text"
-                                    v-model="selectedGlobalFonts.bodyText.fontSize"
-                                    ></v-select>
-                              </v-flex>
-                           </v-layout>
-                        </v-card-text>
-                     </v-card>
-                  </v-expansion-panel-content>
-                  <v-expansion-panel-content>
-                     <div slot="header">Accent Text</div>
-                     <v-card>
-                        <v-card-text class="grey lighten-3">
-                           <v-layout row wrap>
-                              <v-flex xs12>
-                                 Font family
-                              </v-flex>
-                              <v-flex xs12>
-                                 <v-select
-                                    v-bind:items="globalFonts.accentText.fontFamily"
-                                    label="Select"
-                                    single-line
-                                    bottom
-                                    item-value="text"
-                                    item-text="text"
-                                    v-model="selectedGlobalFonts.accentText.fontFamily"
-                                    ></v-select>
-                              </v-flex>
-                              <v-flex xs12>
-                                 Font-weight
-                              </v-flex>
-                              <v-flex xs12>
-                                 <v-select
-                                    v-bind:items="globalFonts.accentText.fontWeight"
-                                    label="Select"
-                                    single-line
-                                    bottom
-                                    item-value="text"
-                                    item-text="text"
-                                    v-model="selectedGlobalFonts.accentText.fontWeight"
-                                    ></v-select>
-                              </v-flex>
-                              <v-flex xs12>
-                                 Font-size
-                              </v-flex>
-                              <v-flex xs12>
-                                 <v-select
-                                    v-bind:items="globalFonts.accentText.fontSize"
-                                    label="Select"
-                                    single-line
-                                    bottom
-                                    item-value="text"
-                                    item-text="text"
-                                    v-model="selectedGlobalFonts.accentText.fontSize"
-                                    ></v-select>
-                              </v-flex>
-                           </v-layout>
-                        </v-card-text>
-                     </v-card>
-                  </v-expansion-panel-content>
-               </v-expansion-panel>
-            </v-card-text>
-            <v-card-actions>
-               <v-spacer></v-spacer>
-               <v-btn flat class="blue--text" @click="onSaveGlobalFonts">
-                  <v-icon left>check_circle</v-icon>
-                  Save
-               </v-btn>
-            </v-card-actions>
-         </v-card>
-      </v-expansion-panel-content>
-   </v-expansion-panel> -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseGlobalFonts">
+          </span>Global Fonts</a>
+      </h4>
+    </div>
+      <div id="collapseGlobalFonts" class="panel-collapse collapse">
+        <div class="list-group">
+          <div class="list-group-item">
+            <div class="panel-group" id="globalFontsAccordion">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#globalFontsAccordion" href="#collapsePrimaryHeadline">
+                      </span>Primary Headline</a>
+                    </h4>
+                </div>
+                <div id="collapsePrimaryHeadline" class="panel-collapse collapse">
+                    <div class="list-group">
+                      <div  class="list-group-item">
+                        <label>Font-family</label>
+                        <v-select :options="globalFonts.primaryHeadline.fontFamily" label="text"></v-select>
+                         <label>Font-family</label>
+                        <v-select :options="globalFonts.primaryHeadline.fontWeight" label="text"></v-select>
+                         <label>Font-size</label>
+                        <v-select :options="globalFonts.primaryHeadline.fontSize" label="text"></v-select>
+                      </div>
+                    </div>
+                </div>
+              </div>
+               <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#globalFontsAccordion" href="#collapseSecondaryHeadline">
+                      </span>Secondary Headline</a>
+                    </h4>
+                </div>
+                <div id="collapseSecondaryHeadline" class="panel-collapse collapse">
+                    <div class="list-group">
+                      <div  class="list-group-item">
+                        <label>Font-family</label>
+                        <v-select :options="globalFonts.secondaryHeadline.fontFamily" label="text"></v-select>
+                         <label>Font-family</label>
+                        <v-select :options="globalFonts.secondaryHeadline.fontWeight" label="text"></v-select>
+                         <label>Font-size</label>
+                        <v-select :options="globalFonts.secondaryHeadline.fontSize" label="text"></v-select>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#globalFontsAccordion" href="#collapseFontSize">
+                      </span>Body Text</a>
+                    </h4>
+                </div>
+                <div id="collapseFontSize" class="panel-collapse collapse">
+                    <div class="list-group">
+                      <div  class="list-group-item">
+                        <label>Font-family</label>
+                        <v-select :options="globalFonts.bodyText.fontFamily" label="text"></v-select>
+                         <label>Font-family</label>
+                        <v-select :options="globalFonts.bodyText.fontWeight" label="text"></v-select>
+                         <label>Font-size</label>
+                        <v-select :options="globalFonts.bodyText.fontSize" label="text"></v-select>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#globalFontsAccordion" href="#collapseAccentText">
+                      </span>Accent Text</a>
+                    </h4>
+                </div>
+                <div id="collapseAccentText" class="panel-collapse collapse">
+                    <div class="list-group">
+                      <div  class="list-group-item">
+                        <label>Font-family</label>
+                        <v-select :options="globalFonts.accentText.fontFamily" label="text"></v-select>
+                         <label>Font-family</label>
+                        <v-select :options="globalFonts.accentText.fontWeight" label="text"></v-select>
+                         <label>Font-size</label>
+                        <v-select :options="globalFonts.accentText.fontSize" label="text"></v-select>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
 </template>
 
 <script>
