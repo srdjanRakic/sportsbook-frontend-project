@@ -105,3 +105,12 @@ input[type='checkbox'] {
   border-bottom-right-radius: 7px;
   padding: .5rem 1rem;
 }
+
+
+/* Color box */
+.color-box {
+  padding: 15px;
+  text-align: center;
+  margin-top: 20px;
+  display: inline-block;
+}
