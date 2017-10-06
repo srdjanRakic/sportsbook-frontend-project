@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import SideMenu from './SideMenu';
+import SideMenu from './SideMenu/SideMenu';
 import Preview from './Preview/Preview';
 
 export default {
