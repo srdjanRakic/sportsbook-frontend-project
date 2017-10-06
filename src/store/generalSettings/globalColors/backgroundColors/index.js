@@ -1,11 +1,11 @@
 export default {
   state: {
-    backgroundColors: {
-      primary: '',
-      second: '',
-      text: '',
-      accent: '',
-    },
+    backgroundColors: [
+      { title: 'Primary', chosenColor: '#194d33' },
+      { title: 'Second', chosenColor: '#194d33' },
+      { title: 'Text', chosenColor: '#194d33' },
+      { title: 'Accent', chosenColor: '#194d33' },
+    ],
   },
   mutations: {
     /*eslint-disable */
@@ -15,5 +15,8 @@ export default {
 
   },
   getters: {
+    backgroundColors(state) {
+      return state.backgroundColors;
+    },
   },
 };

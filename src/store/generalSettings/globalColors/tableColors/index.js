@@ -1,11 +1,11 @@
 export default {
   state: {
-    tableColors: {
-      primary: '',
-      second: '',
-      text: '',
-      accent: '',
-    },
+    tableColors: [
+      { title: 'Primary', chosenColor: '#194d33' },
+      { title: 'Second', chosenColor: '#194d33' },
+      { title: 'Text', chosenColor: '#194d33' },
+      { title: 'Accent', chosenColor: '#194d33' },
+    ],
   },
   mutations: {
     /*eslint-disable */
@@ -15,6 +15,9 @@ export default {
 
   },
   getters: {
+    tableColors(state) {
+      return state.tableColors;
+    },
   },
 };
 

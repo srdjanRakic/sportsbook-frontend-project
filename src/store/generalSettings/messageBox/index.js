@@ -24,7 +24,7 @@ export default {
   mutations: {
     /*eslint-disable */
     updateMessageBox(state, payload) {
-      state.selectedGeneralSettings.messageBox = payload;
+      state.messageBox = payload;
     },
      /*eslint-enable */
   },
@@ -37,7 +37,7 @@ export default {
   },
   getters: {
     messageBox(state) {
-      return state.generalSettings.messageBox;
+      return state.messageBox;
     },
   },
 };

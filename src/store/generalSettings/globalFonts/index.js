@@ -87,7 +87,7 @@ export default {
     /*eslint-disable */
     updateGlobalFonts(state, payload) {
       console.log(`Updating the selectedGeneralSettings: ${payload}`);
-      state.selectedGeneralSettings.globalFonts = payload;
+      state.globalFonts = payload;
     },
      /*eslint-enable */
   },
@@ -100,7 +100,7 @@ export default {
   },
   getters: {
     globalFonts(state) {
-      return state.generalSettings.globalFonts;
+      return state.globalFonts;
     },
   },
 };

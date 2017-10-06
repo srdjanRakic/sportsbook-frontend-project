@@ -1,13 +1,13 @@
 export default {
   state: {
-    customCss: {
+    customCSS: {
       css: '',
     },
   },
   mutations: {
     /*eslint-disable */
     updateCustomCss(state, payload) {
-      state.selectedGeneralSettings.customCss = payload;
+      state.customCSS = payload;
     },
      /*eslint-enable */
   },
@@ -15,8 +15,8 @@ export default {
 
   },
   getters: {
-    customCss(state) {
-      return state.generalSettings.customCss;
+    customCSS(state) {
+      return state.customCSS;
     },
   },
 };

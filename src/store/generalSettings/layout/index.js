@@ -1,27 +1,25 @@
 export default {
   state: {
-    layoutSettings: {
-      layoutName: '',
-    },
+    layout: '',
   },
   mutations: {
     /*eslint-disable */
-    updateLayoutName(state, payload) {
+    updateLayout(state, payload) {
       console.log(`Updating the updateLayoutName to: ${payload}`);
-      state.selectedGeneralSettings.updateLayoutName = payload;
+      state.layout = payload;
     },
      /*eslint-enable */
   },
   actions: {
-    updateLayoutName({ commit }, payload) {
+    updateLayout({ commit }, payload) {
       // eslint-disable-next-line
       console.log(payload);
-      commit('updateLayoutName', payload);
+      commit('updateLayout', payload);
     },
   },
   getters: {
-    layoutSettings(state) {
-      return state.generalSettings.layoutSettings;
+    layout(state) {
+      return state.layout;
     },
   },
 };
