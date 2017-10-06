@@ -1,6 +1,6 @@
 // Absolute imports
 import vSelect from 'vue-select';
-import Chrome from 'vue-color';
+import { Chrome } from 'vue-color';
 import Vue from 'vue';
 
 // Relative imports

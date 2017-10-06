@@ -6,13 +6,13 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <button type="button" class="close" @click="hideModal">
+                <button type="button" class="close" @click="closeModal">
                   <span aria-hidden="true">&times;</span>
                 </button>
                 <h4 class="modal-title">Modal title</h4>
               </div>
               <div class="modal-body">
-                <color-picker @change-color="onChange"></color-picker>
+                <color-picker v-model="colors" @change-color="onColorChange"></color-picker>
               </div>
             </div>
           </div>
@@ -24,6 +24,11 @@
 
 <script>
 export default {
+  data: () => ({
+    colors: {
+      hex: '#194d33',
+    },
+  }),
   computed: {
     showModal() {
       return this.$store.getters.showSelectColorModal;
@@ -35,7 +40,7 @@ export default {
       this.colors = val;
     },
     closeModal() {
-      this.$store.dispatch('toggleSelectColorModal');
+      this.$store.dispatch('toggleSelectColorModal', false);
     },
   },
 };

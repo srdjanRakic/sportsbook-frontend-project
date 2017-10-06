@@ -11,10 +11,12 @@
         <div class="list-group-item">
           <div class="row">
             <div class="container-fluid">
-              <div class="col-md-3" v-for="(item, i) in backgroundColorSettings" :key="i">
-                <div style="clear: both;">{{item.title}}</div>
-                <a @click="showModal = true">
-                  <span :style="{background: item.chosenColor}" class="color-box"></span>
+              <div class="col-md-3" v-for="(item, i) in backgroundColors" :key="i">
+                <div style="clear: both;">
+                  {{item.title}}
+                </div>
+                <a @click="showSelectColorModal">
+                  <span :style="{background: item.chosenColor }" class="color-box"></span>
                 </a>
               </div>
             </div>
@@ -28,22 +30,15 @@
 <script>
 export default {
   name: 'background-colors',
-  data: () => ({
-    showModal: false,
-    colors: {
-      hex: '#194d33',
+  computed: {
+    backgroundColors() {
+      return this.$store.getters.backgroundColors;
     },
-    backgroundColorSettings: [
-      { title: 'Primary', chosenColor: '' },
-      { title: 'Second', chosenColor: '' },
-      { title: 'Text', chosenColor: '' },
-      { title: 'Accent', chosenColor: '' },
-    ],
-  }),
+  },
+  methods: {
+    showSelectColorModal() {
+      this.$store.dispatch('toggleSelectColorModal', true);
+    },
+  },
 };
 </script>
-
-<style scoped>
-
-</style>
-

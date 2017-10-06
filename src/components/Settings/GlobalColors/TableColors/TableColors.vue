@@ -11,9 +11,9 @@
         <div class="list-group-item">
           <div class="row">
             <div class="container-fluid">
-              <div class="col-md-3" v-for="(item, i) in tableColorSettings" :key="i">
+              <div class="col-md-3" v-for="(item, i) in tableColors" :key="i">
                 <div style="clear: both;">{{item.title}}</div>
-                <a @click="showModal = true">
+                <a @click="showSelectColorModal">
                   <span :style="{background: item.chosenColor}" class="color-box"></span>
                 </a>
               </div>
@@ -28,21 +28,14 @@
 <script>
 export default {
   name: 'table-colors',
-  data: () => ({
-    showModal: false,
-    colors: {
-      hex: '#194d33',
-    },
-    tableColorSettings: [
-      { title: 'Primary', chosenColor: '' },
-      { title: 'Second', chosenColor: '' },
-      { title: 'Text', chosenColor: '' },
-      { title: 'Accent', chosenColor: '' },
-    ],
-  }),
   computed: {
-    globalColors() {
-      return this.$store.getters.globalColors;
+    tableColors() {
+      return this.$store.getters.tableColors;
+    },
+  },
+  methods: {
+    showSelectColorModal() {
+      this.$store.dispatch('toggleSelectColorModal', true);
     },
   },
 };

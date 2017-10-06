@@ -11,9 +11,9 @@
         <div class="list-group-item">
           <div class="row">
             <div class="container-fluid">
-              <div class="col-md-3" v-for="(item, i) in linkColorSettings" :key="i">
+              <div class="col-md-3" v-for="(item, i) in linkColors" :key="i">
                 <div style="clear: both;">{{item.title}}</div>
-                <a @click="showModal = true">
+                <a @click="showSelectColorModal">
                   <span :style="{background: item.chosenColor}" class="color-box"></span>
                 </a>
               </div>
@@ -28,27 +28,14 @@
 <script>
 export default {
   name: 'link-colors',
-  data: () => ({
-    showModal: false,
-    colors: {
-      hex: '#194d33',
-    },
-    linkColorSettings: [
-      { title: 'Primary', chosenColor: '' },
-      { title: 'Second', chosenColor: '' },
-      { title: 'Text', chosenColor: '' },
-      { title: 'Accent', chosenColor: '' },
-    ],
-  }),
   computed: {
-    globalColors() {
-      return this.$store.getters.globalColors;
+    linkColors() {
+      return this.$store.getters.linkColors;
     },
   },
   methods: {
-    // onChange method called when the event 'change-color' is emitted
-    onChange(val) {
-      this.colors = val;
+    showSelectColorModal() {
+      this.$store.dispatch('toggleSelectColorModal', true);
     },
   },
 };
