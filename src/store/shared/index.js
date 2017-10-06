@@ -2,6 +2,7 @@ export default {
   state: {
     loading: false,
     error: null,
+    showSelectColorModal: false,
   },
   mutations: {
     /*eslint-disable */
@@ -14,11 +15,17 @@ export default {
     clearError(state) {
       state.error = null;
     },
+    toggleSelectColorModal(state, payload) {
+      state.showSelectColorModal = payload;
+    },
     /*eslint-enable */
   },
   actions: {
     clearError({ commit }) {
       commit('clearError');
+    },
+    toggleSelectColorModal({ commit }, payload) {
+      commit('toggleSelectColorModal', payload);
     },
   },
   getters: {
@@ -27,6 +34,9 @@ export default {
     },
     error(state) {
       return state.error;
+    },
+    showSelectColorModal(state) {
+      return state.showSelectColorModal;
     },
   },
 };
