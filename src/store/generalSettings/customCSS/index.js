@@ -1,8 +1,6 @@
 export default {
   state: {
-    customCSS: {
-      css: '',
-    },
+    customCSS: '',
   },
   mutations: {
     /*eslint-disable */
@@ -12,7 +10,9 @@ export default {
      /*eslint-enable */
   },
   actions: {
-
+    updateCustomCSS({ commit }, payload) {
+      commit('updateCustomCss', payload);
+    },
   },
   getters: {
     customCSS(state) {

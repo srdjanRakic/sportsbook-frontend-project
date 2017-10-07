@@ -3,12 +3,9 @@ export default {
     layout: '',
   },
   mutations: {
-    /*eslint-disable */
     updateLayout(state, payload) {
-      console.log(`Updating the updateLayoutName to: ${payload}`);
       state.layout = payload;
     },
-     /*eslint-enable */
   },
   actions: {
     updateLayout({ commit }, payload) {

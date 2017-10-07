@@ -5,7 +5,6 @@ export default {
     showSelectColorModal: false,
   },
   mutations: {
-    /*eslint-disable */
     setLoading(state, payload) {
       state.loading = payload;
     },
@@ -18,7 +17,6 @@ export default {
     toggleSelectColorModal(state, payload) {
       state.showSelectColorModal = payload;
     },
-    /*eslint-enable */
   },
   actions: {
     clearError({ commit }) {
