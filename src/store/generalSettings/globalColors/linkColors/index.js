@@ -8,10 +8,8 @@ export default {
     ],
   },
   mutations: {
-    
   },
   actions: {
-
   },
   getters: {
     linkColors(state) {
