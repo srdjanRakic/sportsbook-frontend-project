@@ -9,8 +9,6 @@ export default {
   },
   actions: {
     updateLayout({ commit }, payload) {
-      // eslint-disable-next-line
-      console.log(payload);
       commit('updateLayout', payload);
     },
   },

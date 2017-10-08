@@ -8,8 +8,7 @@ export default {
     ],
   },
   mutations: {
-    /*eslint-disable */
-     /*eslint-enable */
+
   },
   actions: {
 
