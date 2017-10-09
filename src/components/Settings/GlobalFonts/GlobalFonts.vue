@@ -10,86 +10,14 @@
       <div class="list-group">
         <div class="list-group-item">
           <div class="panel-group" id="globalFontsAccordion">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#globalFontsAccordion" href="#collapsePrimaryHeadline">
-                    </span>Primary Headline</a>
-                </h4>
-              </div>
-              <div id="collapsePrimaryHeadline" class="panel-collapse collapse">
-                <div class="list-group">
-                  <div class="list-group-item">
-                    <label>Font-family</label>
-                    <v-select :options="globalFonts.primaryHeadline.fontFamily" label="text"></v-select>
-                    <label>Font-family</label>
-                    <v-select :options="globalFonts.primaryHeadline.fontWeight" label="text"></v-select>
-                    <label>Font-size</label>
-                    <v-select :options="globalFonts.primaryHeadline.fontSize" label="text"></v-select>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#globalFontsAccordion" href="#collapseSecondaryHeadline">
-                    </span>Secondary Headline</a>
-                </h4>
-              </div>
-              <div id="collapseSecondaryHeadline" class="panel-collapse collapse">
-                <div class="list-group">
-                  <div class="list-group-item">
-                    <label>Font-family</label>
-                    <v-select :options="globalFonts.secondaryHeadline.fontFamily" label="text"></v-select>
-                    <label>Font-family</label>
-                    <v-select :options="globalFonts.secondaryHeadline.fontWeight" label="text"></v-select>
-                    <label>Font-size</label>
-                    <v-select :options="globalFonts.secondaryHeadline.fontSize" label="text"></v-select>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#globalFontsAccordion" href="#collapseFontSize">
-                    </span>Body Text</a>
-                </h4>
-              </div>
-              <div id="collapseFontSize" class="panel-collapse collapse">
-                <div class="list-group">
-                  <div class="list-group-item">
-                    <label>Font-family</label>
-                    <v-select :options="globalFonts.bodyText.fontFamily" label="text"></v-select>
-                    <label>Font-family</label>
-                    <v-select :options="globalFonts.bodyText.fontWeight" label="text"></v-select>
-                    <label>Font-size</label>
-                    <v-select :options="globalFonts.bodyText.fontSize" label="text"></v-select>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#globalFontsAccordion" href="#collapseAccentText">
-                    </span>Accent Text</a>
-                </h4>
-              </div>
-              <div id="collapseAccentText" class="panel-collapse collapse">
-                <div class="list-group">
-                  <div class="list-group-item">
-                    <label>Font-family</label>
-                    <v-select :options="globalFonts.accentText.fontFamily" label="text"></v-select>
-                    <label>Font-family</label>
-                    <v-select :options="globalFonts.accentText.fontWeight" label="text"></v-select>
-                    <label>Font-size</label>
-                    <v-select :options="globalFonts.accentText.fontSize" label="text"></v-select>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <!-- Primary Headline -->
+            <primary-headline></primary-headline>
+            <!-- Secondary Headline -->
+            <secondary-headline></secondary-headline>
+            <!-- Body Text -->
+            <body-text></body-text>
+            <!-- Accent Text -->
+            <accent-text></accent-text>
           </div>
         </div>
       </div>
@@ -98,8 +26,19 @@
 </template>
 
 <script>
+import PrimaryHeadline from './PrimaryHeadline/PrimaryHeadline';
+import SecondaryHeadline from './SecondaryHeadline/SecondaryHeadline';
+import BodyText from './BodyText/BodyText';
+import AccentText from './AccentText/AccentText';
+
 export default {
   name: 'global-fonts',
+  components: {
+    PrimaryHeadline,
+    SecondaryHeadline,
+    BodyText,
+    AccentText,
+  },
   data() {
     return {
       selectedGlobalFonts: {
@@ -127,9 +66,9 @@ export default {
     };
   },
   computed: {
-    globalFonts() {
-      return this.$store.getters.globalFonts;
-    },
+    // globalFonts() {
+    //   return this.$store.getters.globalFonts;
+    // },
   },
   methods: {
     onSaveGlobalFonts() {
