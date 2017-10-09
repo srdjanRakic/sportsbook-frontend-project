@@ -39,41 +39,5 @@ export default {
     BodyText,
     AccentText,
   },
-  data() {
-    return {
-      selectedGlobalFonts: {
-        primaryHeadline: {
-          fontFamily: [],
-          fontWeight: [],
-          fontSize: [],
-        },
-        secondaryHeadline: {
-          fontFamily: [],
-          fontWeight: [],
-          fontSize: [],
-        },
-        bodyText: {
-          fontFamily: [],
-          fontWeight: [],
-          fontSize: [],
-        },
-        accentText: {
-          fontFamily: [],
-          fontWeight: [],
-          fontSize: [],
-        },
-      },
-    };
-  },
-  computed: {
-    // globalFonts() {
-    //   return this.$store.getters.globalFonts;
-    // },
-  },
-  methods: {
-    onSaveGlobalFonts() {
-      this.$store.dispatch('updateGlobalFonts', this.selectedGlobalFonts);
-    },
-  },
 };
 </script>

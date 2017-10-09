@@ -10,11 +10,20 @@
       <div class="list-group">
         <div class="list-group-item">
           <label>Font-family</label>
-          <v-select :options="globalFonts.secondaryHeadline.fontFamily" label="text"></v-select>
+          <v-select
+            :options="secondaryHeadline.fontFamily"
+              label="text">
+          </v-select>
           <label>Font-family</label>
-          <v-select :options="globalFonts.secondaryHeadline.fontWeight" label="text"></v-select>
+          <v-select
+            :options="secondaryHeadline.fontWeight"
+            label="text">
+          </v-select>
           <label>Font-size</label>
-          <v-select :options="globalFonts.secondaryHeadline.fontSize" label="text"></v-select>
+          <v-select
+            :options="secondaryHeadline.fontSize"
+            label="text">
+          </v-select>
         </div>
       </div>
     </div>
@@ -24,5 +33,24 @@
 <script>
 export default {
   name: 'secondary-headline',
+  data: () => ({
+    selectedSecondaryHeadlines: {
+      fontFamily: '',
+      fontWeight: '',
+      fontSize: '',
+    },
+  }),
+  computed: {
+    secondaryHeadline: {
+      // getter
+      get() {
+        return this.$store.getters.secondaryHeadline;
+      },
+      // setter
+      set(newValue) {
+        this.$store.dispatch('updateSecondaryHeadline', newValue);
+      },
+    },
+  },
 };
 </script>

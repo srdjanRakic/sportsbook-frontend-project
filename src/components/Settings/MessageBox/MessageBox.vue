@@ -9,15 +9,27 @@
     <div id="collapseMessageBox" class="panel-collapse collapse">
       <div class="list-group-item">
         <label>Box Template</label>
-        <v-select :options="messageBox.boxPosition" label="text" v-model="selectedBoxPosition"></v-select>
+        <v-select
+          :options="messageBox.boxPosition"
+          label="text"
+          v-model="seletedMessageBoxSettings.selectedBoxPosition">
+        </v-select>
       </div>
       <div class="list-group-item">
         <label>Box Template</label>
-        <v-select :options="messageBox.boxEffects" label="text" v-model="selectedBoxEffects"></v-select>
+        <v-select
+          :options="messageBox.boxEffects"
+           label="text"
+           v-model="seletedMessageBoxSettings.selectedBoxEffects">
+        </v-select>
       </div>
       <div class="list-group-item">
         <label>Box Template</label>
-        <v-select :options="messageBox.boxTemplate" label="text" v-model="selectedBoxTemplate"></v-select>
+        <v-select
+          :options="messageBox.boxTemplate"
+          label="text"
+          v-model="seletedMessageBoxSettings.selectedBoxTemplate">
+        </v-select>
       </div>
     </div>
   </div>
@@ -28,9 +40,11 @@ export default {
   name: 'message-box',
   data() {
     return {
-      selectedBoxPosition: null,
-      selectedBoxEffects: null,
-      selectedBoxTemplate: null,
+      seletedMessageBoxSettings: {
+        selectedBoxPosition: '',
+        selectedBoxEffects: '',
+        selectedBoxTemplate: '',
+      },
     };
   },
   computed: {

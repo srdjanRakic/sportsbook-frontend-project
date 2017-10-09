@@ -10,11 +10,20 @@
       <div class="list-group">
         <div class="list-group-item">
           <label>Font-family</label>
-          <v-select :options="globalFonts.accentText.fontFamily" label="text"></v-select>
+          <v-select
+            :options="accentText.fontFamily"
+            label="text">
+          </v-select>
           <label>Font-family</label>
-          <v-select :options="globalFonts.accentText.fontWeight" label="text"></v-select>
+          <v-select
+            :options="accentText.fontWeight"
+             label="text">
+          </v-select>
           <label>Font-size</label>
-          <v-select :options="globalFonts.accentText.fontSize" label="text"></v-select>
+          <v-select
+            :options="accentText.fontSize"
+            label="text">
+          </v-select>
         </div>
       </div>
     </div>
@@ -24,5 +33,24 @@
 <script>
 export default {
   name: 'accent-text',
+  data: () => ({
+    selectedAccentText: {
+      fontFamily: '',
+      fontWeight: '',
+      fontSize: '',
+    },
+  }),
+  computed: {
+    accentText: {
+      // getter
+      get() {
+        return this.$store.getters.accentText;
+      },
+      // setter
+      set(newValue) {
+        this.$store.dispatch('updateAccentText', newValue);
+      },
+    },
+  },
 };
 </script>
