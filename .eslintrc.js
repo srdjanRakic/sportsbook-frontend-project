@@ -35,6 +35,8 @@ module.exports = {
     }],
     // fix Windows linebreak problem
     "linebreak-style": 0,
+    // no-param-reassign disabled
+    "no-param-reassign": [2, { "props": false }],
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   }

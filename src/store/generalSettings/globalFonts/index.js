@@ -84,17 +84,12 @@ export default {
     },
   },
   mutations: {
-    /*eslint-disable */
     updateGlobalFonts(state, payload) {
-      console.log(`Updating the selectedGeneralSettings: ${payload}`);
       state.globalFonts = payload;
     },
-     /*eslint-enable */
   },
   actions: {
     updateGlobalFonts({ commit }, payload) {
-      // eslint-disable-next-line
-      console.log(payload);
       commit('updateGlobalFonts', payload);
     },
   },

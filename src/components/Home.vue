@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid main-container">
     <div class="col-md-3 sidebar">
-      <side-menu></side-menu>
+      <the-side-menu></the-side-menu>
     </div>
     <div class="col-md-9 content">
       <preview></preview>
@@ -10,13 +10,13 @@
 </template>
 
 <script>
-import SideMenu from './SideMenu/SideMenu';
+import TheSideMenu from './TheSideMenu/TheSideMenu';
 import Preview from './Preview/Preview';
 
 export default {
   name: 'app',
   components: {
-    SideMenu,
+    TheSideMenu,
     Preview,
   },
 };

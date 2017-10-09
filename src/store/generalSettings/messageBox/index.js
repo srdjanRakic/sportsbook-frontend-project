@@ -22,11 +22,9 @@ export default {
     },
   },
   mutations: {
-    /*eslint-disable */
     updateMessageBox(state, payload) {
       state.messageBox = payload;
     },
-     /*eslint-enable */
   },
   actions: {
     updateMessageBox({ commit }, payload) {

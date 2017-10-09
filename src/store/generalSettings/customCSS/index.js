@@ -3,11 +3,9 @@ export default {
     customCSS: '',
   },
   mutations: {
-    /*eslint-disable */
     updateCustomCSS(state, payload) {
       state.customCSS = payload;
     },
-     /*eslint-enable */
   },
   actions: {
     updateCustomCSS({ commit }, payload) {

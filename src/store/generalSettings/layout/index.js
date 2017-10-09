@@ -3,11 +3,9 @@ export default {
     layout: '',
   },
   mutations: {
-    /*eslint-disable */
     updateLayout(state, payload) {
       state.layout = payload;
     },
-     /*eslint-enable */
   },
   actions: {
     updateLayout({ commit }, payload) {

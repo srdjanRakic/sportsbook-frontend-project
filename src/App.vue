@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    <navbar></navbar>
+    <the-navbar></the-navbar>
     <home></home>
   </div>
 </template>
 
 <script>
-import Navbar from './components/Navbar/Navbar';
+import TheNavbar from './components/TheNavbar/TheNavbar';
 import Home from './components/Home';
 
 export default {
   name: 'app',
   components: {
-    Navbar,
+    TheNavbar,
     Home,
   },
 };

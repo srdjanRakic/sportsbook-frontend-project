@@ -27,7 +27,7 @@ import Widgets from '../Widgets/Widgets';
 import GeneralSettings from '../Settings/GeneralSettings';
 
 export default {
-  name: 'side-menu',
+  name: 'the-side-menu',
   components: {
     Widgets,
     GeneralSettings,
