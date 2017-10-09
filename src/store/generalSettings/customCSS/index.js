@@ -1,18 +1,18 @@
 export default {
   state: {
-    customCSS: {
-      css: '',
-    },
+    customCSS: '',
   },
   mutations: {
     /*eslint-disable */
-    updateCustomCss(state, payload) {
+    updateCustomCSS(state, payload) {
       state.customCSS = payload;
     },
      /*eslint-enable */
   },
   actions: {
-
+    updateCustomCSS({ commit }, payload) {
+      commit('updateCustomCSS', payload);
+    },
   },
   getters: {
     customCSS(state) {

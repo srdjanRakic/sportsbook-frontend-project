@@ -11,7 +11,7 @@
         <div class="list-group-item">
           <div class="form-group">
             <label for="customCss">Enter your custom CSS:</label>
-            <textarea class="form-control" rows="5" id="customCss"></textarea>
+            <textarea class="form-control" rows="5" v-model.lazy="customCSS"></textarea>
           </div>
         </div>
       </div>
@@ -22,10 +22,22 @@
 <script>
 export default {
   name: 'custom-styles',
+  computed: {
+    customCSS: {
+      // getter
+      get() {
+        return this.$store.getters.customCSS;
+      },
+      // setter
+      set(newValue) {
+        this.$store.dispatch('updateCustomCSS', newValue);
+      },
+    },
+  },
 };
 </script>
 
-<style>
+<style scoped>
 textarea {
    resize: none;
 }
