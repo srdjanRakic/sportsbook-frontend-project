@@ -13,7 +13,7 @@
             <div class="list-group-item">
               <label>Layout Name:</label>
               <div class="input-group col-md-12">
-                <input type="text" class="form-control" placeholder="Layout Name">
+                <input type="text" class="form-control" placeholder="Layout Name" v-model.lazy="layout">
               </div>
             </div>
           </div>
@@ -26,19 +26,18 @@
 <script>
 export default {
   name: 'layout-settings',
-  data() {
-    return {
-      layoutName: '',
-    };
-  },
   computed: {
-    layoutSettings() {
-      return this.$store.getters.layoutSettings;
-    },
-  },
-  methods: {
-    onSaveLayoutName() {
-      this.$store.dispatch('updateGlobalFonts', this.layoutName);
+    layout: {
+      // getter
+      get() {
+        return this.$store.getters.layout;
+      },
+      // setter
+      set(newValue) {
+        // eslint-disable-next-line
+        console.log(newValue);
+        this.$store.dispatch('updateLayout', newValue);
+      },
     },
   },
 };
