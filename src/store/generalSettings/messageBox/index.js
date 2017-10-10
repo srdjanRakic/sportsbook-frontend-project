@@ -2,35 +2,51 @@ export default {
   state: {
     messageBox: {
       boxPosition: [
-        { text: 'State 1' },
-        { text: 'State 2' },
-        { text: 'State 3' },
-        { text: 'State 4' },
+        { value: 'State 1', selected: false },
+        { value: 'State 2', selected: false },
+        { value: 'State 3', selected: false },
+        { value: 'State 4', selected: true },
       ],
       boxEffects: [
-        { text: 'State 1' },
-        { text: 'State 2' },
-        { text: 'State 3' },
-        { text: 'State 4' },
+        { value: 'State 1', selected: false },
+        { value: 'State 2', selected: true },
+        { value: 'State 3', selected: false },
+        { value: 'State 4', selected: false },
       ],
       boxTemplate: [
-        { text: 'State 1' },
-        { text: 'State 2' },
-        { text: 'State 3' },
-        { text: 'State 4' },
+        { value: 'State 1', selected: false },
+        { value: 'State 2', selected: false },
+        { value: 'State 3', selected: true },
+        { value: 'State 4', selected: false },
       ],
     },
   },
   mutations: {
-    updateMessageBox(state, payload) {
-      state.messageBox = payload;
+    updateBoxPosition(state, payload) {
+      state.messageBox.boxPosition = payload;
+    },
+    updateBoxEffects(state, payload) {
+      state.messageBox.boxEffects = payload;
+    },
+    updateBoxTemplate(state, payload) {
+      state.messageBox.boxTemplate = payload;
     },
   },
   actions: {
-    updateMessageBox({ commit }, payload) {
+    updateBoxPosition({ commit }, payload) {
       // eslint-disable-next-line
       console.log(payload);
       commit('updateMessageBox', payload);
+    },
+    updateBoxEffects({ commit }, payload) {
+      // eslint-disable-next-line
+      console.log(payload);
+      commit('updateBoxEffects', payload);
+    },
+    updateBoxTemplate({ commit }, payload) {
+      // eslint-disable-next-line
+      console.log(payload);
+      commit('updateBoxTemplate', payload);
     },
   },
   getters: {
