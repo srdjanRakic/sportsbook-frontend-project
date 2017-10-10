@@ -9,33 +9,30 @@
     <div id="collapseMessageBox" class="panel-collapse collapse">
       <div class="list-group-item">
         <label>Box Template</label>
-        <select class="form-control" @change="onSelectedBoxPosition">
+        <select class="form-control" v-model="selectedBoxPosition">
          <option
            v-for="(option, index) in boxPosition" :key="index"
-           :value="option.value"
-           :selected="option.selected">
+           :value="option">
            {{ option.value }}
           </option>
         </select>
       </div>
       <div class="list-group-item">
-        <label>Box Effects</label>
-        <select class="form-control" @change="onSelectedBoxTemplate">
+        <label>Box Template</label>
+        <select class="form-control" v-model="selectedBoxEffect">
          <option
-           v-for="(option, index) in boxTemplate" :key="index"
-           v-bind:value="option.value"
-           :selected="option.selected">
+           v-for="(option, index) in boxEffects" :key="index"
+           v-bind:value="option">
             {{ option.value }}
           </option>
         </select>
       </div>
       <div class="list-group-item">
-        <label>Box Template</label>
-        <select class="form-control" @change="onSelectedBoxEffect">
+        <label>Box Effects</label>
+        <select class="form-control" v-model="selectedBoxTemplate">
          <option
-           v-for="(option, index) in boxEffects" :key="index"
-           v-bind:value="option.value"
-           :selected="option.selected">
+           v-for="(option, index) in boxTemplate" :key="index"
+           v-bind:value="option">
             {{ option.value }}
           </option>
         </select>
@@ -47,20 +44,9 @@
 <script>
 export default {
   name: 'message-box',
-  data: () => ({
-    selectedBoxPosition: '',
-    selectedBoxEffect: '',
-    selectedBoxTemplate: '',
-  }),
   computed: {
-    boxPosition: {
-      get() {
-        return this.$store.getters.messageBox.boxPosition;
-      },
-      set(val) {
-        // eslint-disable-next-line
-        console.log(val);
-      },
+    boxPosition() {
+      return this.$store.getters.messageBox.boxPosition;
     },
     boxTemplate() {
       return this.$store.getters.messageBox.boxTemplate;
@@ -68,46 +54,30 @@ export default {
     boxEffects() {
       return this.$store.getters.messageBox.boxEffects;
     },
+    selectedBoxPosition: {
+      get() {
+        return this.boxPosition.find(x => x.selected === true);
+      },
+      set(val) {
+        this.$store.dispatch('updateBoxPosition', val);
+      },
+    },
+    selectedBoxEffect: {
+      get() {
+        return this.boxEffects.find(x => x.selected === true);
+      },
+      set(val) {
+        this.$store.dispatch('updateBoxPosition', val);
+      },
+    },
+    selectedBoxTemplate: {
+      get() {
+        return this.boxTemplate.find(x => x.selected === true);
+      },
+      set(val) {
+        this.$store.dispatch('updateBoxPosition', val);
+      },
+    },
   },
-  methods: {
-    onSelectedBoxPosition(e) {
-      // eslint-disable-next-line
-      console.log(e.target.value);
-    },
-    onSelectedBoxEffect(e) {
-      // eslint-disable-next-line
-      console.log(e.target.value);
-    },
-    onSelectedBoxTemplate(e) {
-      // eslint-disable-next-line
-      console.log(e.target.value);
-    },
-    // onUpdateMessageBox(attribute, event) {
-    //   // eslint-disable-next-line
-    //   console.log(event);
-    //   // eslint-disable-next-line
-    //   console.log(`Attribute name: ${attribute}, event: ${event}`);
-
-    //   const messageBoxSetting = {
-    //     [attribute]: event,
-    //   };
-    //   // eslint-disable-next-line
-    //   console.log(messageBoxSetting);
-
-    //   // eslint-disable-next-line
-    //   //this.$store.dispatch('updateMessageBox', messageBoxSetting);
-    // },
-  },
-  // watch: {
-  //   selectedMessgeBoxSettings: {
-  //     handler(val, oldVal) {
-  //       // eslint-disable-next-line
-  //       console.log('new: %s, old: %s', val, oldVal);
-  //        // eslint-disable-next-line
-  //       console.log(this.selectedMessgeBoxSettings);
-  //     },
-  //     deep: true,
-  //   },
-  // },
 };
 </script>

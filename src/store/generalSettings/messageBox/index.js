@@ -23,7 +23,20 @@ export default {
   },
   mutations: {
     updateBoxPosition(state, payload) {
-      state.messageBox.boxPosition = payload;
+      const boxPostitionSettings = state.messageBox.boxPosition;
+
+      // unselect the previous selected option
+      const previouslySelectedOption = boxPostitionSettings.find(x => x.selected === true);
+      previouslySelectedOption.selected = false;
+      // eslint-disable-next-line
+      console.log(previouslySelectedOption);
+
+      // set the new selected option
+      const newSelectedOption = boxPostitionSettings.find(x => x === payload);
+      newSelectedOption.selected = true;
+
+      // eslint-disable-next-line
+      console.log(newSelectedOption);
     },
     updateBoxEffects(state, payload) {
       state.messageBox.boxEffects = payload;
@@ -34,9 +47,7 @@ export default {
   },
   actions: {
     updateBoxPosition({ commit }, payload) {
-      // eslint-disable-next-line
-      console.log(payload);
-      commit('updateMessageBox', payload);
+      commit('updateBoxPosition', payload);
     },
     updateBoxEffects({ commit }, payload) {
       // eslint-disable-next-line
