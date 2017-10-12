@@ -84,6 +84,7 @@ export default {
     },
   },
   mutations: {
+    // Primary Headline Mutations
     updatePrimaryHeadlineFontFamily(state, payload) {
       const fontFamilySettings = state.globalFonts.primaryHeadline.fontFamily;
 
@@ -132,6 +133,7 @@ export default {
       // eslint-disable-next-line
       console.log(newSelectedOption);
     },
+    // Secondary Headline Mutations
     updateSecondaryHeadlineFontFamily(state, payload) {
       const fontFamilySettings = state.globalFonts.fontFamily;
 
@@ -180,6 +182,7 @@ export default {
       // eslint-disable-next-line
       console.log(newSelectedOption);
     },
+    // Boxy Text Mutations
     updateBodyTextFontFamily(state, payload) {
       const fontFamilySettings = state.globalFonts.fontFamily;
 
@@ -228,6 +231,7 @@ export default {
       // eslint-disable-next-line
       console.log(newSelectedOption);
     },
+    // Accent Text Mutations
     updateAccentTextFontFamily(state, payload) {
       const fontFamilySettings = state.globalFonts.fontFamily;
 
@@ -278,6 +282,7 @@ export default {
     },
   },
   actions: {
+    // Primary Headline Actions
     updatePrimaryHeadlineFontFamily({ commit }, payload) {
       // eslint-disable-next-line
       console.log(payload);
@@ -293,6 +298,7 @@ export default {
       console.log(payload);
       commit('updatePrimaryHeadlineFontSize', payload);
     },
+     // Secondary Headline Actions
     updateSecondaryHeadlineFontFamily({ commit }, payload) {
       commit('updateSecondaryHeadlineFontFamily', payload);
     },
@@ -302,6 +308,7 @@ export default {
     updateSecondaryHeadlineFontSize({ commit }, payload) {
       commit('updateSecondaryHeadlineFontSize', payload);
     },
+    // Body Text Actions
     updateBodyTextFontFamily({ commit }, payload) {
       commit('updateBodyTextFontFamily', payload);
     },
@@ -311,6 +318,7 @@ export default {
     updateBodyTextFontSize({ commit }, payload) {
       commit('updateBodyTextFontSize', payload);
     },
+    // Accent Text Actions
     updateAccentTextFontFamily({ commit }, payload) {
       commit('updateAccentTextFontFamily', payload);
     },
