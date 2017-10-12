@@ -57,7 +57,7 @@ export default {
         return this.fontFamily.find(x => x.selected === true);
       },
       set(val) {
-        this.$store.dispatch('updateFontFamily', val);
+        this.$store.dispatch('updatePrimaryHeadlineFontFamily', val);
       },
     },
     selectedFontWeight: {
@@ -65,7 +65,7 @@ export default {
         return this.fontWeight.find(x => x.selected === true);
       },
       set(val) {
-        this.$store.dispatch('updateFontWeight', val);
+        this.$store.dispatch('updatePrimaryHeadlineFontWeight', val);
       },
     },
     selectedFontSize: {
@@ -73,7 +73,7 @@ export default {
         return this.fontSize.find(x => x.selected === true);
       },
       set(val) {
-        this.$store.dispatch('updateFontSize', val);
+        this.$store.dispatch('updatePrimaryHeadlineFontSize', val);
       },
     },
   },

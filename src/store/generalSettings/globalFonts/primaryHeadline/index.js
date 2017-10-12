@@ -22,7 +22,7 @@ export default {
     },
   },
   mutations: {
-    updateFontFamily(state, payload) {
+    updatePrimaryHeadlineFontFamily(state, payload) {
       const fontFamilySettings = state.primaryHeadline.fontFamily;
 
       // unselect the previous selected option
@@ -38,7 +38,7 @@ export default {
       // eslint-disable-next-line
       console.log(newSelectedOption);
     },
-    updateFontWeight(state, payload) {
+    updatePrimaryHeadlineFontWeight(state, payload) {
       const fontWeightSettings = state.primaryHeadline.fontWeight;
 
       // unselect the previous selected option
@@ -54,7 +54,7 @@ export default {
       // eslint-disable-next-line
       console.log(newSelectedOption);
     },
-    updateFontSize(state, payload) {
+    updatePrimaryHeadlineFontSize(state, payload) {
       const fontSizeSettings = state.primaryHeadline.fontWeight;
 
       // unselect the previous selected option
@@ -72,20 +72,20 @@ export default {
     },
   },
   actions: {
-    updateFontFamily({ commit }, payload) {
+    updatePrimaryHeadlineFontFamily({ commit }, payload) {
       // eslint-disable-next-line
       console.log(payload);
-      commit('updateFontFamily', payload);
+      commit('updatePrimaryHeadlineFontFamily', payload);
     },
-    updateFontWeight({ commit }, payload) {
+    updatePrimaryHeadlineFontWeight({ commit }, payload) {
       // eslint-disable-next-line
       console.log(payload);
-      commit('updateFontWeight', payload);
+      commit('updatePrimaryHeadlineFontWeight', payload);
     },
-    updateFontSize({ commit }, payload) {
+    updatePrimaryHeadlineFontSize({ commit }, payload) {
        // eslint-disable-next-line
       console.log(payload);
-      commit('updateFontSize', payload);
+      commit('updatePrimaryHeadlineFontSize', payload);
     },
   },
   getters: {
