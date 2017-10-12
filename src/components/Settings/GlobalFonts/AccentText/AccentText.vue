@@ -10,20 +10,29 @@
       <div class="list-group">
         <div class="list-group-item">
           <label>Font-family</label>
-          <v-select
-            :options="accentText.fontFamily"
-            label="text">
-          </v-select>
-          <label>Font-family</label>
-          <v-select
-            :options="accentText.fontWeight"
-             label="text">
-          </v-select>
+          <select class="form-control" v-model="selectedFontFamily">
+            <option
+            v-for="(option, index) in fontFamily" :key="index"
+            :value="option">
+            {{ option.value }}
+            </option>
+          </select>
+          <label>Font-weight</label>
+          <select class="form-control" v-model="selectedFontWeight">
+            <option
+            v-for="(option, index) in fontWeight" :key="index"
+            :value="option">
+            {{ option.value }}
+            </option>
+          </select>
           <label>Font-size</label>
-          <v-select
-            :options="accentText.fontSize"
-            label="text">
-          </v-select>
+          <select class="form-control" v-model="selectedFontSize">
+            <option
+            v-for="(option, index) in fontSize" :key="index"
+            :value="option">
+            {{ option.value }}
+            </option>
+          </select>
         </div>
       </div>
     </div>
@@ -33,22 +42,38 @@
 <script>
 export default {
   name: 'accent-text',
-  data: () => ({
-    selectedAccentText: {
-      fontFamily: '',
-      fontWeight: '',
-      fontSize: '',
-    },
-  }),
   computed: {
-    accentText: {
-      // getter
+    fontFamily() {
+      return this.$store.getters.accentText.fontFamily;
+    },
+    fontWeight() {
+      return this.$store.getters.accentText.fontWeight;
+    },
+    fontSize() {
+      return this.$store.getters.accentText.fontSize;
+    },
+    selectedFontFamily: {
       get() {
-        return this.$store.getters.accentText;
+        return this.fontFamily.find(x => x.selected === true);
       },
-      // setter
-      set(newValue) {
-        this.$store.dispatch('updateAccentText', newValue);
+      set(val) {
+        this.$store.dispatch('updateAccentTextFontFamily', val);
+      },
+    },
+    selectedFontWeight: {
+      get() {
+        return this.fontWeight.find(x => x.selected === true);
+      },
+      set(val) {
+        this.$store.dispatch('updateAccentTextFontWeight', val);
+      },
+    },
+    selectedFontSize: {
+      get() {
+        return this.fontSize.find(x => x.selected === true);
+      },
+      set(val) {
+        this.$store.dispatch('updateAccentTextFontSize', val);
       },
     },
   },
