@@ -10,23 +10,29 @@
       <div class="list-group">
         <div class="list-group-item">
           <label>Font-family</label>
-          <v-select
-            :options="primaryHeadline.fontFamily"
-            v-model="selectedPrimaryHeadlines.fontFamily"
-            label="text">
-          </v-select>
-          <label>Font-family</label>
-          <v-select
-            :options="primaryHeadline.fontWeight"
-            v-model="selectedPrimaryHeadlines.fontWeight"
-            label="text">
-          </v-select>
+          <select class="form-control" v-model="selectedFontFamily">
+            <option
+            v-for="(option, index) in fontFamily" :key="index"
+            :value="option">
+            {{ option.value }}
+            </option>
+          </select>
+          <label>Font-weight</label>
+          <select class="form-control" v-model="selectedFontWeight">
+            <option
+            v-for="(option, index) in fontWeight" :key="index"
+            :value="option">
+            {{ option.value }}
+            </option>
+          </select>
           <label>Font-size</label>
-          <v-select
-            :options="primaryHeadline.fontSize"
-            v-model="selectedPrimaryHeadlines.fontSize"
-            label="text">
-          </v-select>
+          <select class="form-control" v-model="selectedFontSize">
+            <option
+            v-for="(option, index) in fontSize" :key="index"
+            :value="option">
+            {{ option.value }}
+            </option>
+          </select>
         </div>
       </div>
     </div>
@@ -36,29 +42,40 @@
 <script>
 export default {
   name: 'primary-headline',
-  data: () => ({
-    selectedPrimaryHeadlines: {
-      fontFamily: '',
-      fontWeight: '',
-      fontSize: '',
-    },
-  }),
   computed: {
-    primaryHeadline: {
+    fontFamily() {
+      return this.$store.getters.primaryHeadline.fontFamily;
+    },
+    fontWeight() {
+      return this.$store.getters.primaryHeadline.fontWeight;
+    },
+    fontSize() {
+      return this.$store.getters.primaryHeadline.fontSize;
+    },
+    selectedFontFamily: {
       get() {
-        return this.$store.getters.primaryHeadline;
+        return this.fontFamily.find(x => x.selected === true);
       },
-      set() {
-        // eslint-disable-next-line
-        console.log(this.selectedPrimaryHeadlines);
-        this.$store.dispatch('updatePrimaryHeadline', this.selectedPrimaryHeadlines);
+      set(val) {
+        this.$store.dispatch('updateFontFamily', val);
       },
     },
-  },
-  beforeDestroy() {
-    // eslint-disable-next-line
-    console.log(this.selectedPrimaryHeadlines);
-    this.$store.dispatch('updatePrimaryHeadline', this.selectedPrimaryHeadlines);
+    selectedFontWeight: {
+      get() {
+        return this.fontWeight.find(x => x.selected === true);
+      },
+      set(val) {
+        this.$store.dispatch('updateFontWeight', val);
+      },
+    },
+    selectedFontSize: {
+      get() {
+        return this.fontSize.find(x => x.selected === true);
+      },
+      set(val) {
+        this.$store.dispatch('updateFontSize', val);
+      },
+    },
   },
 };
 </script>
