@@ -2,33 +2,84 @@ export default {
   state: {
     secondaryHeadline: {
       fontFamily: [
-        { text: 'State 1' },
-        { text: 'State 2' },
-        { text: 'State 3' },
-        { text: 'State 4' },
+        { value: 'State 1', selected: false },
+        { value: 'State 2', selected: true },
+        { value: 'State 3', selected: false },
+        { value: 'State 4', selected: false },
       ],
       fontWeight: [
-        { text: 'State 1' },
-        { text: 'State 2' },
-        { text: 'State 3' },
-        { text: 'State 4' },
+        { value: 'State 1', selected: true },
+        { value: 'State 2', selected: false },
+        { value: 'State 3', selected: false },
+        { value: 'State 4', selected: false },
       ],
       fontSize: [
-        { text: 'State 1' },
-        { text: 'State 2' },
-        { text: 'State 3' },
-        { text: 'State 4' },
+        { value: 'State 1', selected: false },
+        { value: 'State 2', selected: false },
+        { value: 'State 3', selected: false },
+        { value: 'State 4', selected: true },
       ],
     },
   },
   mutations: {
-    updateSecondaryHeadline(state, payload) {
-      state.secondaryHeadline = payload;
+    updateSecondaryHeadlineFontFamily(state, payload) {
+      const fontFamilySettings = state.secondaryHeadline.fontFamily;
+
+      // unselect the previous selected option
+      const previouslySelectedOption = fontFamilySettings.find(x => x.selected === true);
+      previouslySelectedOption.selected = false;
+      // eslint-disable-next-line
+      console.log(previouslySelectedOption);
+
+      // set the new selected option
+      const newSelectedOption = fontFamilySettings.find(x => x === payload);
+      newSelectedOption.selected = true;
+
+      // eslint-disable-next-line
+      console.log(newSelectedOption);
+    },
+    updateSecondaryHeadlineFontWeight(state, payload) {
+      const fontWeightSettings = state.secondaryHeadline.fontWeight;
+
+      // unselect the previous selected option
+      const previouslySelectedOption = fontWeightSettings.find(x => x.selected === true);
+      previouslySelectedOption.selected = false;
+      // eslint-disable-next-line
+      console.log(previouslySelectedOption);
+
+      // set the new selected option
+      const newSelectedOption = fontWeightSettings.find(x => x === payload);
+      newSelectedOption.selected = true;
+
+      // eslint-disable-next-line
+      console.log(newSelectedOption);
+    },
+    updateSecondaryHeadlineFontSize(state, payload) {
+      const fontSizeSettings = state.secondaryHeadline.fontWeight;
+
+      // unselect the previous selected option
+      const previouslySelectedOption = fontSizeSettings.find(x => x.selected === true);
+      previouslySelectedOption.selected = false;
+      // eslint-disable-next-line
+      console.log(previouslySelectedOption);
+
+      // set the new selected option
+      const newSelectedOption = fontSizeSettings.find(x => x === payload);
+      newSelectedOption.selected = true;
+
+      // eslint-disable-next-line
+      console.log(newSelectedOption);
     },
   },
   actions: {
-    updateSecondaryHeadline({ commit }, payload) {
-      commit('updateGlobalFonts', payload);
+    updateSecondaryHeadlineFontFamily({ commit }, payload) {
+      commit('updateSecondaryHeadlineFontFamily', payload);
+    },
+    updateSecondaryHeadlineFontWeight({ commit }, payload) {
+      commit('updateSecondaryHeadlineFontWeight', payload);
+    },
+    updateSecondaryHeadlineFontSize({ commit }, payload) {
+      commit('updateSecondaryHeadlineFontSize', payload);
     },
   },
   getters: {
