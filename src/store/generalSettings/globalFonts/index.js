@@ -1,89 +1,91 @@
 export default {
   state: {
-    primaryHeadline: {
-      fontFamily: [
-        { value: 'State 1', selected: false },
-        { value: 'State 2', selected: true },
-        { value: 'State 3', selected: false },
-        { value: 'State 4', selected: false },
-      ],
-      fontWeight: [
-        { value: 'State 1', selected: true },
-        { value: 'State 2', selected: false },
-        { value: 'State 3', selected: false },
-        { value: 'State 4', selected: false },
-      ],
-      fontSize: [
-        { value: 'State 1', selected: false },
-        { value: 'State 2', selected: false },
-        { value: 'State 3', selected: false },
-        { value: 'State 4', selected: true },
-      ],
-    },
-    secondaryHeadline: {
-      fontFamily: [
-        { value: 'State 1', selected: false },
-        { value: 'State 2', selected: true },
-        { value: 'State 3', selected: false },
-        { value: 'State 4', selected: false },
-      ],
-      fontWeight: [
-        { value: 'State 1', selected: true },
-        { value: 'State 2', selected: false },
-        { value: 'State 3', selected: false },
-        { value: 'State 4', selected: false },
-      ],
-      fontSize: [
-        { value: 'State 1', selected: false },
-        { value: 'State 2', selected: false },
-        { value: 'State 3', selected: false },
-        { value: 'State 4', selected: true },
-      ],
-    },
-    bodyText: {
-      fontFamily: [
-        { value: 'State 1', selected: false },
-        { value: 'State 2', selected: true },
-        { value: 'State 3', selected: false },
-        { value: 'State 4', selected: false },
-      ],
-      fontWeight: [
-        { value: 'State 1', selected: true },
-        { value: 'State 2', selected: false },
-        { value: 'State 3', selected: false },
-        { value: 'State 4', selected: false },
-      ],
-      fontSize: [
-        { value: 'State 1', selected: false },
-        { value: 'State 2', selected: false },
-        { value: 'State 3', selected: false },
-        { value: 'State 4', selected: true },
-      ],
-    },
-    accentText: {
-      fontFamily: [
-        { value: 'State 1', selected: false },
-        { value: 'State 2', selected: true },
-        { value: 'State 3', selected: false },
-        { value: 'State 4', selected: false },
-      ],
-      fontWeight: [
-        { value: 'State 1', selected: true },
-        { value: 'State 2', selected: false },
-        { value: 'State 3', selected: false },
-        { value: 'State 4', selected: false },
-      ],
-      fontSize: [
-        { value: 'State 1', selected: false },
-        { value: 'State 2', selected: false },
-        { value: 'State 3', selected: false },
-        { value: 'State 4', selected: true },
-      ],
+    globalFonts: {
+      primaryHeadline: {
+        fontFamily: [
+          { value: 'State 1', selected: false },
+          { value: 'State 2', selected: true },
+          { value: 'State 3', selected: false },
+          { value: 'State 4', selected: false },
+        ],
+        fontWeight: [
+          { value: 'State 1', selected: true },
+          { value: 'State 2', selected: false },
+          { value: 'State 3', selected: false },
+          { value: 'State 4', selected: false },
+        ],
+        fontSize: [
+          { value: 'State 1', selected: false },
+          { value: 'State 2', selected: false },
+          { value: 'State 3', selected: false },
+          { value: 'State 4', selected: true },
+        ],
+      },
+      secondaryHeadline: {
+        fontFamily: [
+          { value: 'State 1', selected: false },
+          { value: 'State 2', selected: true },
+          { value: 'State 3', selected: false },
+          { value: 'State 4', selected: false },
+        ],
+        fontWeight: [
+          { value: 'State 1', selected: true },
+          { value: 'State 2', selected: false },
+          { value: 'State 3', selected: false },
+          { value: 'State 4', selected: false },
+        ],
+        fontSize: [
+          { value: 'State 1', selected: false },
+          { value: 'State 2', selected: false },
+          { value: 'State 3', selected: false },
+          { value: 'State 4', selected: true },
+        ],
+      },
+      bodyText: {
+        fontFamily: [
+          { value: 'State 1', selected: false },
+          { value: 'State 2', selected: true },
+          { value: 'State 3', selected: false },
+          { value: 'State 4', selected: false },
+        ],
+        fontWeight: [
+          { value: 'State 1', selected: true },
+          { value: 'State 2', selected: false },
+          { value: 'State 3', selected: false },
+          { value: 'State 4', selected: false },
+        ],
+        fontSize: [
+          { value: 'State 1', selected: false },
+          { value: 'State 2', selected: false },
+          { value: 'State 3', selected: false },
+          { value: 'State 4', selected: true },
+        ],
+      },
+      accentText: {
+        fontFamily: [
+          { value: 'State 1', selected: false },
+          { value: 'State 2', selected: true },
+          { value: 'State 3', selected: false },
+          { value: 'State 4', selected: false },
+        ],
+        fontWeight: [
+          { value: 'State 1', selected: true },
+          { value: 'State 2', selected: false },
+          { value: 'State 3', selected: false },
+          { value: 'State 4', selected: false },
+        ],
+        fontSize: [
+          { value: 'State 1', selected: false },
+          { value: 'State 2', selected: false },
+          { value: 'State 3', selected: false },
+          { value: 'State 4', selected: true },
+        ],
+      },
     },
   },
   mutations: {
     updatePrimaryHeadlineFontFamily(state, payload) {
-      const fontFamilySettings = state.primaryHeadline.fontFamily;
+      const fontFamilySettings = state.globalFonts.primaryHeadline.fontFamily;
 
       // unselect the previous selected option
       const previouslySelectedOption = fontFamilySettings.find(x => x.selected === true);
@@ -99,7 +101,7 @@ export default {
       console.log(newSelectedOption);
     },
     updatePrimaryHeadlineFontWeight(state, payload) {
-      const fontWeightSettings = state.primaryHeadline.fontWeight;
+      const fontWeightSettings = state.globalFonts.primaryHeadline.fontWeight;
 
       // unselect the previous selected option
       const previouslySelectedOption = fontWeightSettings.find(x => x.selected === true);
@@ -115,7 +117,7 @@ export default {
       console.log(newSelectedOption);
     },
     updatePrimaryHeadlineFontSize(state, payload) {
-      const fontSizeSettings = state.primaryHeadline.fontWeight;
+      const fontSizeSettings = state.globalFonts.fontWeight;
 
       // unselect the previous selected option
       const previouslySelectedOption = fontSizeSettings.find(x => x.selected === true);
@@ -131,7 +133,7 @@ export default {
       console.log(newSelectedOption);
     },
     updateSecondaryHeadlineFontFamily(state, payload) {
-      const fontFamilySettings = state.secondaryHeadline.fontFamily;
+      const fontFamilySettings = state.globalFonts.fontFamily;
 
       // unselect the previous selected option
       const previouslySelectedOption = fontFamilySettings.find(x => x.selected === true);
@@ -147,7 +149,7 @@ export default {
       console.log(newSelectedOption);
     },
     updateSecondaryHeadlineFontWeight(state, payload) {
-      const fontWeightSettings = state.secondaryHeadline.fontWeight;
+      const fontWeightSettings = state.globalFonts.fontWeight;
 
       // unselect the previous selected option
       const previouslySelectedOption = fontWeightSettings.find(x => x.selected === true);
@@ -163,7 +165,7 @@ export default {
       console.log(newSelectedOption);
     },
     updateSecondaryHeadlineFontSize(state, payload) {
-      const fontSizeSettings = state.secondaryHeadline.fontWeight;
+      const fontSizeSettings = state.globalFonts.fontWeight;
 
       // unselect the previous selected option
       const previouslySelectedOption = fontSizeSettings.find(x => x.selected === true);
@@ -179,7 +181,7 @@ export default {
       console.log(newSelectedOption);
     },
     updateBodyTextFontFamily(state, payload) {
-      const fontFamilySettings = state.bodyText.fontFamily;
+      const fontFamilySettings = state.globalFonts.fontFamily;
 
       // unselect the previous selected option
       const previouslySelectedOption = fontFamilySettings.find(x => x.selected === true);
@@ -195,7 +197,7 @@ export default {
       console.log(newSelectedOption);
     },
     updateBodyTextFontWeight(state, payload) {
-      const fontWeightSettings = state.bodyText.fontWeight;
+      const fontWeightSettings = state.globalFonts.fontWeight;
 
       // unselect the previous selected option
       const previouslySelectedOption = fontWeightSettings.find(x => x.selected === true);
@@ -211,7 +213,7 @@ export default {
       console.log(newSelectedOption);
     },
     updateBodyTextFontSize(state, payload) {
-      const fontSizeSettings = state.bodyText.fontSize;
+      const fontSizeSettings = state.globalFonts.fontSize;
 
       // unselect the previous selected option
       const previouslySelectedOption = fontSizeSettings.find(x => x.selected === true);
@@ -227,7 +229,7 @@ export default {
       console.log(newSelectedOption);
     },
     updateAccentTextFontFamily(state, payload) {
-      const fontFamilySettings = state.accentText.fontFamily;
+      const fontFamilySettings = state.globalFonts.fontFamily;
 
       // unselect the previous selected option
       const previouslySelectedOption = fontFamilySettings.find(x => x.selected === true);
@@ -243,7 +245,7 @@ export default {
       console.log(newSelectedOption);
     },
     updateAccentTextFontWeight(state, payload) {
-      const fontWeightSettings = state.accentText.fontWeight;
+      const fontWeightSettings = state.globalFonts.fontWeight;
 
       // unselect the previous selected option
       const previouslySelectedOption = fontWeightSettings.find(x => x.selected === true);
@@ -259,7 +261,7 @@ export default {
       console.log(newSelectedOption);
     },
     updateAccentTextFontSize(state, payload) {
-      const fontSizeSettings = state.accentText.fontSize;
+      const fontSizeSettings = state.globalFonts.fontSize;
 
       // unselect the previous selected option
       const previouslySelectedOption = fontSizeSettings.find(x => x.selected === true);
@@ -321,16 +323,16 @@ export default {
   },
   getters: {
     primaryHeadline(state) {
-      return state.primaryHeadline;
+      return state.globalFonts.primaryHeadline;
     },
     secondaryHeadline(state) {
-      return state.secondaryHeadline;
+      return state.globalFonts.secondaryHeadline;
     },
     bodyText(state) {
-      return state.bodyText;
+      return state.globalFonts.bodyText;
     },
     accentText(state) {
-      return state.accentText;
+      return state.globalFonts.accentText;
     },
   },
 };
