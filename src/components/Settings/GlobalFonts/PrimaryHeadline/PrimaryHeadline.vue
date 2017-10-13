@@ -44,13 +44,13 @@ export default {
   name: 'primary-headline',
   computed: {
     fontFamily() {
-      return this.$store.getters.primaryHeadline.fontFamily;
+      return this.$store.getters.primaryHeadlineFontFamily;
     },
     fontWeight() {
-      return this.$store.getters.primaryHeadline.fontWeight;
+      return this.$store.getters.primaryHeadlineFontWeight;
     },
     fontSize() {
-      return this.$store.getters.primaryHeadline.fontSize;
+      return this.$store.getters.primaryHeadlineFontSize;
     },
     selectedFontFamily: {
       get() {

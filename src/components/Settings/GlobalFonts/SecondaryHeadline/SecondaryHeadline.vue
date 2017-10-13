@@ -44,13 +44,13 @@ export default {
   name: 'secondary-headline',
   computed: {
     fontFamily() {
-      return this.$store.getters.secondaryHeadline.fontFamily;
+      return this.$store.getters.secondaryHeadlineFontFamily;
     },
     fontWeight() {
-      return this.$store.getters.secondaryHeadline.fontWeight;
+      return this.$store.getters.secondaryHeadlineFontWeight;
     },
     fontSize() {
-      return this.$store.getters.secondaryHeadline.fontSize;
+      return this.$store.getters.secondaryHeadlineFontSize;
     },
     selectedFontFamily: {
       get() {

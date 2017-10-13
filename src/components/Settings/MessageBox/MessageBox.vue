@@ -46,13 +46,13 @@ export default {
   name: 'message-box',
   computed: {
     boxPosition() {
-      return this.$store.getters.messageBox.boxPosition;
+      return this.$store.getters.boxPosition;
     },
     boxTemplate() {
-      return this.$store.getters.messageBox.boxTemplate;
+      return this.$store.getters.boxTemplate;
     },
     boxEffects() {
-      return this.$store.getters.messageBox.boxEffects;
+      return this.$store.getters.boxEffects;
     },
     selectedBoxPosition: {
       get() {

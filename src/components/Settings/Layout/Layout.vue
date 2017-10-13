@@ -30,13 +30,13 @@ export default {
     layout: {
       // getter
       get() {
-        return this.$store.getters.layout;
+        return this.$store.getters.layoutName;
       },
       // setter
       set(newValue) {
         // eslint-disable-next-line
         console.log(newValue);
-        this.$store.dispatch('updateLayout', newValue);
+        this.$store.dispatch('updateLayoutName', newValue);
       },
     },
   },

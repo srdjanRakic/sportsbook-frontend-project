@@ -44,13 +44,13 @@ export default {
   name: 'body-text',
   computed: {
     fontFamily() {
-      return this.$store.getters.bodyText.fontFamily;
+      return this.$store.getters.bodyTextFontFamily;
     },
     fontWeight() {
-      return this.$store.getters.bodyText.fontWeight;
+      return this.$store.getters.bodyTextFontWeight;
     },
     fontSize() {
-      return this.$store.getters.bodyText.fontSize;
+      return this.$store.getters.bodyTextFontSize;
     },
     selectedFontFamily: {
       get() {

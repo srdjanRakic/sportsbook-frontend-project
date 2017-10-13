@@ -44,13 +44,13 @@ export default {
   name: 'accent-text',
   computed: {
     fontFamily() {
-      return this.$store.getters.accentText.fontFamily;
+      return this.$store.getters.accentTextFontFamily;
     },
     fontWeight() {
-      return this.$store.getters.accentText.fontWeight;
+      return this.$store.getters.accentTextFontWeight;
     },
     fontSize() {
-      return this.$store.getters.accentText.fontSize;
+      return this.$store.getters.accentTextFontSize;
     },
     selectedFontFamily: {
       get() {
