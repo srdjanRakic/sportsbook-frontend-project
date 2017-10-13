@@ -1,20 +1,20 @@
 export default {
   state: {
-    layout: '',
+    layoutName: '',
   },
   mutations: {
-    updateLayout(state, payload) {
-      state.layout = payload;
+    updateLayoutName(state, payload) {
+      state.layoutName = payload;
     },
   },
   actions: {
-    updateLayout({ commit }, payload) {
-      commit('updateLayout', payload);
+    updateLayoutName({ commit }, payload) {
+      commit('updateLayoutName', payload);
     },
   },
   getters: {
-    layout(state) {
-      return state.layout;
+    layoutName(state) {
+      return state.layoutName;
     },
   },
 };

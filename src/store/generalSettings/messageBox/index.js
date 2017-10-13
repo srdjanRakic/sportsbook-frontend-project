@@ -1,29 +1,27 @@
 export default {
   state: {
-    messageBox: {
-      boxPosition: [
-        { value: 'State 1', selected: false },
-        { value: 'State 2', selected: false },
-        { value: 'State 3', selected: false },
-        { value: 'State 4', selected: true },
-      ],
-      boxEffects: [
-        { value: 'State 1', selected: false },
-        { value: 'State 2', selected: true },
-        { value: 'State 3', selected: false },
-        { value: 'State 4', selected: false },
-      ],
-      boxTemplate: [
-        { value: 'State 1', selected: false },
-        { value: 'State 2', selected: false },
-        { value: 'State 3', selected: true },
-        { value: 'State 4', selected: false },
-      ],
-    },
+    boxPosition: [
+      { value: 'State 1', selected: false },
+      { value: 'State 2', selected: false },
+      { value: 'State 3', selected: false },
+      { value: 'State 4', selected: true },
+    ],
+    boxEffects: [
+      { value: 'State 1', selected: false },
+      { value: 'State 2', selected: true },
+      { value: 'State 3', selected: false },
+      { value: 'State 4', selected: false },
+    ],
+    boxTemplate: [
+      { value: 'State 1', selected: false },
+      { value: 'State 2', selected: false },
+      { value: 'State 3', selected: true },
+      { value: 'State 4', selected: false },
+    ],
   },
   mutations: {
     updateBoxPosition(state, payload) {
-      const boxPostitionSettings = state.messageBox.boxPosition;
+      const boxPostitionSettings = state.boxPosition;
 
       // unselect the previous selected option
       const previouslySelectedOption = boxPostitionSettings.find(x => x.selected === true);
@@ -39,10 +37,10 @@ export default {
       console.log(newSelectedOption);
     },
     updateBoxEffects(state, payload) {
-      state.messageBox.boxEffects = payload;
+      state.boxEffects = payload;
     },
     updateBoxTemplate(state, payload) {
-      state.messageBox.boxTemplate = payload;
+      state.boxTemplate = payload;
     },
   },
   actions: {
@@ -61,8 +59,17 @@ export default {
     },
   },
   getters: {
-    messageBox(state) {
-      return state.messageBox;
+    boxPosition(state) {
+      return state.boxPosition;
+    },
+    boxEffects(state) {
+      return state.boxEffects;
+    },
+    boxTemplate(state) {
+      return state.boxTemplate;
+    },
+    generalSettings(state) {
+      return state.generalSettings;
     },
   },
 };
