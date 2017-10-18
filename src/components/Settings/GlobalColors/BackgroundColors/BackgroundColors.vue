@@ -15,12 +15,13 @@
                 <div style="clear: both;">
                   {{item.title}}
                 </div>
-                <a @click="showSelectColorModal">
+                <a @click="showSelectColorModal(item.title, item.chosenColor)">
                   <span :style="{background: item.chosenColor }" class="color-box"></span>
                 </a>
               </div>
             </div>
           </div>
+          <color-picker-modal :colorTitle="optionTitle" :color="chosenColor" @onColorChosen="onColorChosen"></color-picker-modal>
         </div>
       </div>
     </div>
@@ -30,14 +31,24 @@
 <script>
 export default {
   name: 'background-colors',
+  data: () => ({
+    optionTitle: '',
+    chosenColor: '',
+  }),
   computed: {
     backgroundColors() {
       return this.$store.getters.backgroundColors;
     },
   },
   methods: {
-    showSelectColorModal() {
+    showSelectColorModal(title, color) {
+      this.optionTitle = title;
+      this.chosenColor = color;
+
       this.$store.dispatch('toggleSelectColorModal', true);
+    },
+    onColorChosen(val) {
+      this.$store.dispatch('updateBackgroundColors', val);
     },
   },
 };
