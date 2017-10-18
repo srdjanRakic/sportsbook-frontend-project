@@ -12,13 +12,14 @@
           <div class="row">
             <div class="container-fluid">
               <div class="col-md-3" v-for="(item, i) in tableColors" :key="i">
-                <div style="clear: both;">{{item.title}}</div>
-                <a @click="showSelectColorModal">
+                <div style="clear: both;">{{ item.title }}</div>
+                <a @click="showSelectColorModal(item.title, item.chosenColor)">
                   <span :style="{background: item.chosenColor}" class="color-box"></span>
                 </a>
               </div>
             </div>
           </div>
+          <color-picker-modal :colorTitle="optionTitle" :color="chosenColor" @onColorChosen="onColorChosen"></color-picker-modal>
         </div>
       </div>
     </div>
@@ -28,14 +29,24 @@
 <script>
 export default {
   name: 'table-colors',
+  data: () => ({
+    optionTitle: '',
+    chosenColor: '',
+  }),
   computed: {
     tableColors() {
       return this.$store.getters.tableColors;
     },
   },
   methods: {
-    showSelectColorModal() {
+    showSelectColorModal(title, color) {
+      this.optionTitle = title;
+      this.chosenColor = color;
+
       this.$store.dispatch('toggleSelectColorModal', true);
+    },
+    onColorChosen(val) {
+      this.$store.dispatch('updateTableColors', val);
     },
   },
 };
