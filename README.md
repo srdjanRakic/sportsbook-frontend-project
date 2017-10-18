@@ -1,4 +1,4 @@
-# sportsbook-frontend-project
+## SportsBook Frontend Project
 
 > A Vue.js project
 
