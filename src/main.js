@@ -1,5 +1,4 @@
 // Absolute imports
-import vSelect from 'vue-select';
 import { Chrome } from 'vue-color';
 import Vue from 'vue';
 
@@ -13,7 +12,6 @@ import { store } from './store';
 require('./assets/css/main.css');
 
 // Global components
-Vue.component('v-select', vSelect);
 Vue.component('app-alert', AlertCmp);
 Vue.component('color-picker', Chrome);
 Vue.component('color-picker-modal', ColorPickerModal);
