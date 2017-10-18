@@ -14,7 +14,6 @@
             <button-colors></button-colors>
             <table-colors></table-colors>
             <link-colors></link-colors>
-            <color-picker-modal></color-picker-modal>
           </div>
         </div>
       </div>

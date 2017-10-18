@@ -12,7 +12,7 @@
                 <h4 class="modal-title">Modal title</h4>
               </div>
               <div class="modal-body">
-                <color-picker v-model="colors" @change-color="onColorChange"></color-picker>
+                <color-picker v-model="chosenColor"></color-picker>
               </div>
             </div>
           </div>
@@ -24,21 +24,26 @@
 
 <script>
 export default {
-  data: () => ({
-    colors: {
-      hex: '#194d33',
-    },
-  }),
+  props: ['color', 'colorTitle'],
   computed: {
     showModal() {
       return this.$store.getters.showSelectColorModal;
     },
+    chosenColor: {
+      get() {
+        return this.color;
+      },
+      set(val) {
+        const colorPicked = {
+          title: this.colorTitle,
+          chosenColor: val.hex,
+        };
+
+        this.$emit('onColorChosen', colorPicked);
+      },
+    },
   },
   methods: {
-    // onChange method called when the event 'change-color' is emitted
-    onColorChange(val) {
-      this.colors = val;
-    },
     closeModal() {
       this.$store.dispatch('toggleSelectColorModal', false);
     },
