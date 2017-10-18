@@ -13,12 +13,13 @@
             <div class="container-fluid">
               <div class="col-md-3" v-for="(item, i) in linkColors" :key="i">
                 <div style="clear: both;">{{item.title}}</div>
-                <a @click="showSelectColorModal">
+                <a @click="showSelectColorModal(item.title, item.chosenColor)">
                   <span :style="{background: item.chosenColor}" class="color-box"></span>
                 </a>
               </div>
             </div>
           </div>
+          <color-picker-modal :colorTitle="optionTitle" :color="chosenColor" @onColorChosen="onColorChosen"></color-picker-modal>
         </div>
       </div>
     </div>
@@ -28,14 +29,24 @@
 <script>
 export default {
   name: 'link-colors',
+  data: () => ({
+    optionTitle: '',
+    chosenColor: '',
+  }),
   computed: {
     linkColors() {
       return this.$store.getters.linkColors;
     },
   },
   methods: {
-    showSelectColorModal() {
+    showSelectColorModal(title, color) {
+      this.optionTitle = title;
+      this.chosenColor = color;
+
       this.$store.dispatch('toggleSelectColorModal', true);
+    },
+    onColorChosen(val) {
+      this.$store.dispatch('updateLinkColors', val);
     },
   },
 };
