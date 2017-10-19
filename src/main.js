@@ -1,4 +1,5 @@
 // Absolute imports
+import VueGridLayout from 'vue-grid-layout';
 import { Chrome } from 'vue-color';
 import Vue from 'vue';
 
@@ -11,10 +12,16 @@ import { store } from './store';
 // Global CSS
 require('./assets/css/main.css');
 
+// Grid Layout
+const GridLayout = VueGridLayout.GridLayout;
+const GridItem = VueGridLayout.GridItem;
+
 // Global components
 Vue.component('app-alert', AlertCmp);
 Vue.component('color-picker', Chrome);
 Vue.component('color-picker-modal', ColorPickerModal);
+Vue.component('grid-layout', GridLayout);
+Vue.component('grid-item', GridItem);
 
 Vue.config.productionTip = false;
 
