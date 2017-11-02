@@ -5,7 +5,6 @@ import Vue from 'vue';
 
 // Relative imports
 import App from './App';
-import AlertCmp from './components/Shared/Alert';
 import ColorPickerModal from './components/Shared/ColorPickerModal';
 import { store } from './store';
 
@@ -17,7 +16,6 @@ const GridLayout = VueGridLayout.GridLayout;
 const GridItem = VueGridLayout.GridItem;
 
 // Global components
-Vue.component('app-alert', AlertCmp);
 Vue.component('color-picker', Chrome);
 Vue.component('color-picker-modal', ColorPickerModal);
 Vue.component('grid-layout', GridLayout);
