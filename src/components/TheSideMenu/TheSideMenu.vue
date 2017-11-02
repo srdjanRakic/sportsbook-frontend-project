@@ -14,7 +14,7 @@
     </div>
 
     <div class="row mar-top-10" v-if="showGeneralSettings">
-      <general-settings></general-settings>
+      <settings></settings>
     </div>
     <div class="row mar-top-10" v-if="showWidgets">
       <widgets></widgets>
@@ -23,14 +23,14 @@
 </template>
 
 <script>
-import Widgets from '../Widgets/Widgets';
-import GeneralSettings from '../Settings/GeneralSettings';
+import Widgets from './Widgets/Widgets';
+import Settings from './Settings/Settings';
 
 export default {
   name: 'the-side-menu',
   components: {
     Widgets,
-    GeneralSettings,
+    Settings,
   },
   data: () => ({
     showGeneralSettings: true,
