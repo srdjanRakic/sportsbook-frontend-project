@@ -20,74 +20,59 @@ export default {
     ],
   },
   mutations: {
-    updateBodyTextFontFamily(state, payload) {
+    updateAccentTextFontFamily(state, payload) {
       const fontFamilySettings = state.fontFamily;
 
       // unselect the previous selected option
       const previouslySelectedOption = fontFamilySettings.find(x => x.selected === true);
       previouslySelectedOption.selected = false;
-      // eslint-disable-next-line
-      console.log(previouslySelectedOption);
 
       // set the new selected option
       const newSelectedOption = fontFamilySettings.find(x => x === payload);
       newSelectedOption.selected = true;
-
-      // eslint-disable-next-line
-      console.log(newSelectedOption);
     },
-    updateBodyTextFontWeight(state, payload) {
-      const fontWeightSettings = state.fontWeight;
+    updateAccentTextFontWeight(state, payload) {
+      const fontWeightSettings = state.accentText.fontWeight;
 
       // unselect the previous selected option
       const previouslySelectedOption = fontWeightSettings.find(x => x.selected === true);
       previouslySelectedOption.selected = false;
-      // eslint-disable-next-line
-      console.log(previouslySelectedOption);
 
       // set the new selected option
       const newSelectedOption = fontWeightSettings.find(x => x === payload);
       newSelectedOption.selected = true;
-
-      // eslint-disable-next-line
-      console.log(newSelectedOption);
     },
-    updateBodyTextFontSize(state, payload) {
-      const fontSizeSettings = state.fontSize;
+    updateAccentTextFontSize(state, payload) {
+      const fontSizeSettings = state.accentText.fontSize;
 
       // unselect the previous selected option
       const previouslySelectedOption = fontSizeSettings.find(x => x.selected === true);
       previouslySelectedOption.selected = false;
-      // eslint-disable-next-line
-      console.log(previouslySelectedOption);
 
       // set the new selected option
       const newSelectedOption = fontSizeSettings.find(x => x === payload);
       newSelectedOption.selected = true;
-
-      // eslint-disable-next-line
-      console.log(newSelectedOption);
     },
   },
   actions: {
-    updateBodyTextFontFamily({ commit }, payload) {
-      commit('updateBodyTextFontFamily', payload);
+    updateAccentTextFontFamily({ commit }, payload) {
+      commit('updateAccentTextFontFamily', payload);
     },
-    updateBodyTextFontWeight({ commit }, payload) {
-      commit('updateBodyTextFontWeight', payload);
+    updateAccentTextFontWeight({ commit }, payload) {
+      commit('updateAccentTextFontWeight', payload);
     },
-    updateBodyTextFontSize({ commit }, payload) {
-      commit('updateBodyTextFontSize', payload);
+    updateAccentTextFontSize({ commit }, payload) {
+      commit('updateAccentTextFontSize', payload);
     },
   },
   getters: {
-    bodyTextFontFamily(state) {
+    accentTextFontFamily(state) {
       return state.fontFamily;
     },
-    bodyTextFontWeight(state) {
+    accentTextFontWeight(state) {
       return state.fontWeight;
     },
-    bodyTextFontSize(state) {
+    accentTextFontSize(state) {
       return state.fontSize;
     },
   },

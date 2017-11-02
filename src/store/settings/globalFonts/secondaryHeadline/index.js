@@ -20,74 +20,59 @@ export default {
     ],
   },
   mutations: {
-    updateAccentTextFontFamily(state, payload) {
-      const fontFamilySettings = state.fontFamily;
+    updateSecondaryHeadlineFontFamily(state, payload) {
+      const fontFamilySettings = state.secondaryHeadline.fontFamily;
 
       // unselect the previous selected option
       const previouslySelectedOption = fontFamilySettings.find(x => x.selected === true);
       previouslySelectedOption.selected = false;
-      // eslint-disable-next-line
-      console.log(previouslySelectedOption);
 
       // set the new selected option
       const newSelectedOption = fontFamilySettings.find(x => x === payload);
       newSelectedOption.selected = true;
-
-      // eslint-disable-next-line
-      console.log(newSelectedOption);
     },
-    updateAccentTextFontWeight(state, payload) {
-      const fontWeightSettings = state.accentText.fontWeight;
+    updateSecondaryHeadlineFontWeight(state, payload) {
+      const fontWeightSettings = state.secondaryHeadline.fontWeight;
 
       // unselect the previous selected option
       const previouslySelectedOption = fontWeightSettings.find(x => x.selected === true);
       previouslySelectedOption.selected = false;
-      // eslint-disable-next-line
-      console.log(previouslySelectedOption);
 
       // set the new selected option
       const newSelectedOption = fontWeightSettings.find(x => x === payload);
       newSelectedOption.selected = true;
-
-      // eslint-disable-next-line
-      console.log(newSelectedOption);
     },
-    updateAccentTextFontSize(state, payload) {
-      const fontSizeSettings = state.accentText.fontSize;
+    updateSecondaryHeadlineFontSize(state, payload) {
+      const fontSizeSettings = state.secondaryHeadline.fontWeight;
 
       // unselect the previous selected option
       const previouslySelectedOption = fontSizeSettings.find(x => x.selected === true);
       previouslySelectedOption.selected = false;
-      // eslint-disable-next-line
-      console.log(previouslySelectedOption);
 
       // set the new selected option
       const newSelectedOption = fontSizeSettings.find(x => x === payload);
       newSelectedOption.selected = true;
-
-      // eslint-disable-next-line
-      console.log(newSelectedOption);
     },
   },
   actions: {
-    updateAccentTextFontFamily({ commit }, payload) {
-      commit('updateAccentTextFontFamily', payload);
+    updateSecondaryHeadlineFontFamily({ commit }, payload) {
+      commit('updateSecondaryHeadlineFontFamily', payload);
     },
-    updateAccentTextFontWeight({ commit }, payload) {
-      commit('updateAccentTextFontWeight', payload);
+    updateSecondaryHeadlineFontWeight({ commit }, payload) {
+      commit('updateSecondaryHeadlineFontWeight', payload);
     },
-    updateAccentTextFontSize({ commit }, payload) {
-      commit('updateAccentTextFontSize', payload);
+    updateSecondaryHeadlineFontSize({ commit }, payload) {
+      commit('updateSecondaryHeadlineFontSize', payload);
     },
   },
   getters: {
-    accentTextFontFamily(state) {
+    secondaryHeadlineFontFamily(state) {
       return state.fontFamily;
     },
-    accentTextFontWeight(state) {
+    secondaryHeadlineFontWeight(state) {
       return state.fontWeight;
     },
-    accentTextFontSize(state) {
+    secondaryHeadlineFontSize(state) {
       return state.fontSize;
     },
   },

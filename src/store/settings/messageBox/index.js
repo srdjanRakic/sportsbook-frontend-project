@@ -26,15 +26,10 @@ export default {
       // unselect the previous selected option
       const previouslySelectedOption = boxPostitionSettings.find(x => x.selected === true);
       previouslySelectedOption.selected = false;
-      // eslint-disable-next-line
-      console.log(previouslySelectedOption);
 
       // set the new selected option
       const newSelectedOption = boxPostitionSettings.find(x => x === payload);
       newSelectedOption.selected = true;
-
-      // eslint-disable-next-line
-      console.log(newSelectedOption);
     },
     updateBoxEffects(state, payload) {
       state.boxEffects = payload;
@@ -48,13 +43,9 @@ export default {
       commit('updateBoxPosition', payload);
     },
     updateBoxEffects({ commit }, payload) {
-      // eslint-disable-next-line
-      console.log(payload);
       commit('updateBoxEffects', payload);
     },
     updateBoxTemplate({ commit }, payload) {
-      // eslint-disable-next-line
-      console.log(payload);
       commit('updateBoxTemplate', payload);
     },
   },
