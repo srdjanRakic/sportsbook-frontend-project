@@ -26,7 +26,7 @@ export default {
   data: () => ({
     layout: testLayout,
     draggable: true,
-    resizable: false,
+    resizable: true,
   }),
 };
 </script>
