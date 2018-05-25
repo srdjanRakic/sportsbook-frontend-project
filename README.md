@@ -1,6 +1,6 @@
 ## SportsBook Frontend Project
 
-> A Vue.js project
+> Vue.js SportBook solution.
 
 ## Build Setup
 
